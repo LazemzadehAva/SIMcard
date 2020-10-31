@@ -28,57 +28,27 @@
             <i class="fas fa-sim-card"></i>
         </div>
     </div>
-    <div class="row">
+    <div class="row" *ngFor="let item of cartItems">
         <div class="col">
-            <i class="fas fa-minus-circle"></i>
+            <i class="fas fa-minus-circle" (click) = "delete(item.id)"></i>
         </div>
         <div class="col">
-            <p>همراه اول</p>
+            <p>{{item.operator}}</p>
         </div>
         <div class="col">
-            <p>0912 876 0543</p>
+            <p>{{item.phoneNumber}}</p>
         </div>
         <div class="col">
-            <p>اعتباری</p>
+            <p>{{item.type? "اعتباری" : "دائمی"}}</p>
         </div>
         <div class="col">
-            <p>300000</p>
+            <p>{{item.cost}}</p>
         </div>
         <div class="col">
-            <p>نقدی</p>
+            <p>{{item.status? "صفر" : "کارکرده"}}</p>
         </div>
-        <div class="col">
-            <p>صفر</p>
-        </div>
-        <div class="col">
+        <div class="col" >
             <i class="fas fa-sim-card"></i>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <i class="fas fa-minus-circle"></i>
-        </div>
-        <div class="col">
-            <p>ایرانسل</p>
-        </div>
-        <div class="col">
-            <p>0936 567 0123</p>
-        </div>
-        <div class="col">
-            <p>دایمی</p>
-        </div>
-        <div class="col">
-            <p>1000000</p>
-        </div>
-        <div class="col">
-            <p>الکترونیکی</p>
-        </div>
-        <div class="col">
-            <p>کارکرد</p>
-        </div>
-        <div class="col">
-            <i class="fas fa-sim-card"></i>
-        </div>
-    </div>
-    
+    </div>    
 </div>
