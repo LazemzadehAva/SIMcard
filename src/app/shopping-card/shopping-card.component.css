@@ -1,0 +1,14 @@
+ .nav-color {
+background-color: rgb(197, 230, 197);
+}
+/* .navbar{
+    position: relative;
+}
+.nav-motion:hover{
+    position: absolute;
+    color: fuchsia;
+}  */
+
+.container{
+    padding: 0 15%;
+}
