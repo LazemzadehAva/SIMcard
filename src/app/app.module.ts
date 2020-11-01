@@ -5,13 +5,15 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {ShoppingCardComponent} from './shopping-card/shopping-card.component';
 import { FilterComponent } from './filter/filter.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingListComponent,
     ShoppingCardComponent,
-    FilterComponent
+    FilterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

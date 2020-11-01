@@ -15,7 +15,7 @@ export class ShoppingCardComponent implements OnInit {
 
   ngOnInit() {
      this.cartItems = this.dataService.getUserCart();
-    //this.dataService.itemAdded.subscribe((item: ItemModel) => {
+    // this.dataService.itemAdded.subscribe((item: ItemModel) => {
     //   if (this.cartItems.findIndex(x => x.id === item.id) < 0) {
     //     this.cartItems.push(item);
     //   }

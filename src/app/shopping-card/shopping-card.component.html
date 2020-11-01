@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light nav-color container">
+<!-- <nav class="navbar navbar-expand-lg navbar-light nav-color container">
     <a class="navbar-brand nav-motion" routerLink=""> لیست خرید</a>
-</nav>
-<div class="container">
+</nav> -->
+<!-- <div class="container">
     <div class="row">
         <div class="col">
             <i class="fas fa-minus-circle"></i>
@@ -51,4 +51,37 @@
             <i class="fas fa-sim-card"></i>
         </div>
     </div>    
-</div>
+</div> -->
+
+<table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">
+            <i class="fas fa-mobile-alt"></i>
+        </th>
+        <th scope="col">اپراتور</th>
+        <th scope="col">شماره سیم کارت</th>
+        <th scope="col">نوع سیم کارت</th>
+        <th scope="col">قیمت</th>
+        <th scope="col">کارکرد</th>
+        <th scope="col">
+            <i class="fas fa-sim-card"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of cartItems">
+      <tr>
+        <th scope="col">
+            <i class="fas fa-minus-circle" (click) = "delete(item.id)"></i>
+        </th>
+        <td><p>{{item.operator}}</p></td>
+        <td><p>{{item.phoneNumber}}</p></td>
+        <td>{{item.type? "اعتباری" : "دائمی"}}</td>
+        <td>{{item.cost}}</td>
+        <td>{{item.status? "صفر" : "کارکرده"}}</td>
+        <td>
+            <i class="fas fa-sim-card"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>

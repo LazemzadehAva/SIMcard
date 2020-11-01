@@ -19,6 +19,6 @@ export class ShoppingListComponent implements OnInit {
 
   addToCart(item: ItemModel) {
      this.simDataService.addItemToCart(item);
-    //this.simDataService.itemAdded.emit(item);
+    // this.simDataService.itemAdded.emit(item);
   }
 }
