@@ -20,7 +20,7 @@ export class SimDataService {
     type: true,
     cost: 470298022,
     status: true,
-    operator: 'Charlie Yankee'
+    operator: 'ایرانسل'
   }, {
     id: 2,
     phoneNumber: '395-673-3991',
@@ -715,7 +715,6 @@ export class SimDataService {
     status: true,
     operator: 'Golf Juliett Charlie'
   }];
-
   // mockData: Observable<ItemModel[]> = of(this.mock);
 
   getAllSims() {

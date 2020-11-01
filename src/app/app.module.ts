@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {ShoppingCardComponent} from './shopping-card/shopping-card.component';
 import { FilterComponent } from './filter/filter.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,10 +12,10 @@ import { FilterComponent } from './filter/filter.component';
     ShoppingListComponent,
     ShoppingCardComponent,
     FilterComponent
-
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
