@@ -14,13 +14,13 @@ export class ShoppingCardComponent implements OnInit {
   constructor(private dataService: SimDataService) { }
 
   ngOnInit() {
-    // this.cartItems = this.dataService.getUserCart();
-    this.dataService.itemAdded.subscribe((item: ItemModel) => {
-      if (this.cartItems.findIndex(x => x.id === item.id) < 0) {
-        this.cartItems.push(item);
-      }
-    }
-    );
+     this.cartItems = this.dataService.getUserCart();
+    //this.dataService.itemAdded.subscribe((item: ItemModel) => {
+    //   if (this.cartItems.findIndex(x => x.id === item.id) < 0) {
+    //     this.cartItems.push(item);
+    //   }
+    // }
+    // );
   }
   delete(id: number) {
     this.cartItems = this.cartItems.filter(x => x.id !== id);
