@@ -6,6 +6,7 @@ import {ShoppingCardComponent} from './shopping-card/shopping-card.component';
 import { FilterComponent } from './filter/filter.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FooterComponent } from './footer/footer.component';
     ShoppingListComponent,
     ShoppingCardComponent,
     FilterComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
