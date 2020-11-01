@@ -10,43 +10,29 @@
 </nav>
 <div class="container">
 
-<div class="row">
- <div class="col-md-4">
-    <app-filter></app-filter>
-</div>
+  <div class="row">
+    <div class="col-md-4">
+      <app-filter></app-filter>
+    </div>
 
 
     <div class="col-md-8">
 
-      <!-- <div class="row">
-        <div class="col-md-6 text-center">
-          <img class="img-fluid" src="https://www.flaticon.com/svg/static/icons/svg/3443/3443054.svg" alt=""
-            style="width: 10%;">
-          <h5>09128526945</h5>
-          <p>5000000 تومان</p>
-          <button type="button" (click)="addToCart(item)" class="btn btn-primary">+</button>
-        </div>
-
-        <div class="col-md-6 text-center">
-          <img class="img-fluid" src="https://www.flaticon.com/svg/static/icons/svg/3443/3443054.svg" alt=""
-            style="width: 10%;">
-          <h5>09128526945</h5>
-          <p>5000000 تومان</p>
-          <button type="button" (click)="addToCart(item)" class="btn btn-primary">+</button>
-        </div>
-      </div> -->
-
-
       <div class="row">
         <ng-container *ngFor="let item of allSims">
-          <div class="col-md-5 card text-center pt-3 m-3">
-            <img class="mx-auto d-block" src="https://www.flaticon.com/svg/static/icons/svg/3443/3443054.svg" alt=""
-            style="width: 30%;">
-              <div class="card-body ">
-            <h5 class="card-title">{{item.phoneNumber}}</h5>
-            <p class="card-text">{{item.cost}} تومان</p>
-            <button class="btn btn-dark" (click)="addToCart(item)">+</button>
-          </div></div>
+          <div class="col-md-5 card text-center pt-3 m-3 ">
+            <div class="row ">
+              <div class="col-4 d-flex align-items-center pr-0">
+                <img class="my-auto d-block align-middle"
+                  src="https://www.flaticon.com/svg/static/icons/svg/3443/3443054.svg" alt="" style="width: 90%;"></div>
+
+              <div class="card-body col-8 pl-0">
+                <h5 class="card-title">{{item.phoneNumber}}</h5>
+                <p class="card-text">{{item.cost}} تومان</p>
+                <button class="btn btn-dark px-5" (click)="addToCart(item)">+</button>
+              </div>
+            </div>
+          </div>
         </ng-container>
       </div>
     </div>
