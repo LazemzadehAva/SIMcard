@@ -1,3 +1,4 @@
+import { ItemModel } from './../item.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,4 @@ export class FilterComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
