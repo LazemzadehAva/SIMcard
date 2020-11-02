@@ -1,3 +1,4 @@
+import { FilterModel } from './../filter/filter.component';
 import { ItemModel } from './../item.model';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -12,6 +13,8 @@ export class SimDataService {
 
   itemAdded = new EventEmitter<ItemModel>();
 
+  data: object[] = [];
+
   cart: ItemModel[] = [];
 
   mock: ItemModel[] = [{
@@ -20,7 +23,7 @@ export class SimDataService {
     type: true,
     cost: 470298022,
     status: true,
-    operator: 'ایرانسل'
+    operator: 'irancell'
   }, {
     id: 2,
     phoneNumber: '395-673-3991',
@@ -32,14 +35,14 @@ export class SimDataService {
     id: 3,
     phoneNumber: '227-841-2377',
     type: false,
-    cost: 986254792,
+    cost: 1592,
     status: true,
     operator: 'Hotel Foxtrot'
   }, {
     id: 4,
     phoneNumber: '322-637-9525',
     type: true,
-    cost: 573683423,
+    cost: 503,
     status: true,
     operator: 'Kilo November'
   }, {
@@ -699,22 +702,24 @@ export class SimDataService {
     type: false,
     cost: 510871739,
     status: true,
-    operator: 'Charlie Oscar Hotel'
+    operator: 'رایتل'
   }, {
     id: 99,
     phoneNumber: '792-689-3873',
     type: true,
     cost: 949471944,
     status: false,
-    operator: 'Romeo X-ray'
+    operator: 'همراه اول'
   }, {
     id: 100,
     phoneNumber: '199-350-4207',
     type: true,
     cost: 62775393,
     status: true,
-    operator: 'Golf Juliett Charlie'
+    operator: 'ایرانسل'
   }];
+
+  filteredItems: ItemModel[] = this.mock;
   // mockData: Observable<ItemModel[]> = of(this.mock);
 
   getAllSims() {
@@ -727,5 +732,34 @@ export class SimDataService {
 
   addItemToCart(newItem): void {
     this.cart.push(newItem);
+  }
+
+  // onCheckType(typeEl: any[]) {
+  //   console.log(typeEl[0].id);
+  //   console.log(typeEl[0].checked);
+  //   if (typeEl[0].id === 'et' || typeEl[0].checked === true) {
+  //     this.filteredItems = this.mock.filter(x => x.type === true);
+  //     console.log(this.filteredItems);
+  //   } else if (typeEl[0].id === 'da' || typeEl[0].checked) {
+  //     this.filteredItems = this.mock.filter(x => x.type === false);
+  //     console.log(this.filteredItems);
+  //     console.log(this.mock);
+  //   } else {
+  //     this.filteredItems = this.mock;
+  //   }
+  //   // this.filteredItems = this.filteredItems.filter(el => el.type === typeEl);
+  //   return this.filteredItems;
+  // }
+
+  filterResults(filters: FilterModel[]) {
+    const typeFilters = filters.filter(f => f.fieldName === 'type');
+    const operatorFilters = filters.filter(f => f.fieldName === 'operator');
+    const costFilters = filters.filter(f => f.fieldName === 'cost');
+    this.filteredItems = this.mock
+      .filter(item => typeFilters.length === 0 || typeFilters.some(x => item.type == x.value))
+      .filter(item => operatorFilters.length === 0 || operatorFilters.some(x => item.operator == x.value))
+      .filter(item => costFilters.length === 0 ||
+        (!costFilters.some(x => x.type === 'max') || costFilters.some(x => x.type === 'max' && item.cost <= +(x.value)))
+        && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))));
   }
 }

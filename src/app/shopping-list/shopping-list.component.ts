@@ -14,7 +14,7 @@ export class ShoppingListComponent implements OnInit {
   constructor(private simDataService: SimDataService) { }
 
   ngOnInit() {
-    this.allSims = this.simDataService.getAllSims();
+    this.allSims = this.simDataService.filteredItems;
   }
 
   addToCart(item: ItemModel) {
