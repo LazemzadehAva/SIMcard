@@ -1,67 +1,65 @@
-<!-- Section: Sidebar -->
 <section>
 
-    <!-- Section: Filters -->
     <section class="pt-3 text-right pr-5">
   
       <h5>دسته بندی ها</h5>
   <hr>
-      <!-- Section: Condition -->
+    
       <section class="mb-4">
   
         <h6 class="font-weight-bold mb-3">نوع سیم کارت</h6>
-  
-        <div class="form-check pl-0 mb-3" >
-          <input type="checkbox" class="form-check-input filled-in" id="new">
+        <div class="form-check pl-0 mb-3">
+          <!-- ng-change="onfilter(type)" ng-model="type" -->
+          <input (click)="onTypeClick($event)" data-name="type" data-value="0" value="" type="checkbox" class="form-check-input filled-in" id="et">
           <label class="form-check-label small text-uppercase card-link-secondary" for="new">اعتباری</label>
         </div>
         <div class="form-check pl-0 mb-3">
-          <input type="checkbox" class="form-check-input filled-in" id="used">
+          <input (click)="onTypeClick($event)" data-name="type" data-value="1" type="checkbox" class="form-check-input filled-in" id="da" >
           <label class="form-check-label small text-uppercase card-link-secondary" for="used">دائمی</label>
         </div>
   
       </section>
-      <!-- Section: Condition -->
+
   <hr>
       <section class="mb-4">
   
         <h6 class="font-weight-bold mb-3"> اپراتور </h6>
   
         <div class="form-check pl-0 mb-3">
-          <input type="checkbox" class="form-check-input filled-in" id="new">
+          <input (click)="onTypeClick($event)" data-name="operator" data-value="hamrah" type="checkbox" class="form-check-input filled-in" id="new">
           <label class="form-check-label small text-uppercase card-link-secondary" for="new">همراه اول</label>
         </div>
         <div class="form-check pl-0 mb-3">
-          <input type="checkbox" class="form-check-input filled-in" id="used">
+          <input (click)="onTypeClick($event)" data-name="operator" data-value="irancell" type="checkbox" class="form-check-input filled-in" id="used">
           <label class="form-check-label small text-uppercase card-link-secondary" for="used">ایرانسل</label>
         </div>
         <div class="form-check pl-0 mb-3">
-            <input type="checkbox" class="form-check-input filled-in" id="used">
+            <input (click)="onTypeClick($event)" data-name="operator" data-value="raitel" type="checkbox" class="form-check-input filled-in" id="used">
             <label class="form-check-label small text-uppercase card-link-secondary" for="used">رایتل</label>
           </div>
   
       </section>
   <hr>
-      <!-- Section: Price -->
+
       <section class="mb-4">
   
         <h6 class="font-weight-bold mb-3">قیمت</h6>
   
         <div class="form-check pl-0 mb-3">
-          <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
+          <input (click)="onRangeClick($event)" data-name="cost" data-maxvalue="500000" type="checkbox" class="form-check-input">
           <label class="form-check-label small text-uppercase card-link-secondary" for="under25">زیر 500000</label>
         </div>
         <div class="form-check pl-0 mb-3">
-          <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
+          <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="500000" data-maxvalue="2000000" type="checkbox" class="form-check-input" id="2550" name="materialExampleRadios">
           <label class="form-check-label small text-uppercase card-link-secondary" for="2550">  بین 500000 تا 2000000</label>
         </div>
         <div class="form-check pl-0 mb-3">
-          <input type="radio" class="form-check-input" id="50100" name="materialExampleRadios">
+          <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="2000000" data-maxvalue="5000000" type="checkbox" class="form-check-input" id="50100" name="materialExampleRadios">
           <label class="form-check-label small text-uppercase card-link-secondary" for="50100">بین 2000000 تا 5000000</label>
         </div>
         <div class="form-check pl-0 mb-3">
-          <input type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="100200">از 500000 به بالا</label>
+          <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="5000000" type="checkbox" class="form-check-input" id="100200" name="materialExampleRadios">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="100200">از 5000000 به بالا</label>
         </div>
 
         <form>
@@ -77,7 +75,7 @@
         </form>
   
       </section>
-      <!-- Section: Price -->
+
  
       <!-- Section: Price version 2 -->
       <!-- <section class="mb-4">
@@ -96,7 +94,7 @@
       <!-- Section: Price version 2 -->
   
     </section>
-    <!-- Section: Filters -->
+
   
   </section>
-  <!-- Section: Sidebar -->
+
