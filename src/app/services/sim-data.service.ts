@@ -11,7 +11,7 @@ export class SimDataService {
 
   constructor() { }
 
-  itemAdded = new EventEmitter<ItemModel>();
+
 
   data: object[] = [];
 
@@ -720,19 +720,6 @@ export class SimDataService {
   }];
 
   filteredItems: ItemModel[] = this.mock;
-  // mockData: Observable<ItemModel[]> = of(this.mock);
-
-  getAllSims() {
-    return this.mock;
-  }
-
-  getUserCart() {
-    return this.cart;
-  }
-
-  addItemToCart(newItem): void {
-    this.cart.push(newItem);
-  }
 
   // onCheckType(typeEl: any[]) {
   //   console.log(typeEl[0].id);
@@ -750,7 +737,20 @@ export class SimDataService {
   //   // this.filteredItems = this.filteredItems.filter(el => el.type === typeEl);
   //   return this.filteredItems;
   // }
+  listUpdated = new EventEmitter();
+  // mockData: Observable<ItemModel[]> = of(this.mock);
 
+  getAllSims() {
+    return this.mock;
+  }
+
+  getUserCart() {
+    return this.cart;
+  }
+
+  addItemToCart(newItem): void {
+    this.cart.push(newItem);
+  }
   filterResults(filters: FilterModel[]) {
     const typeFilters = filters.filter(f => f.fieldName === 'type');
     const operatorFilters = filters.filter(f => f.fieldName === 'operator');
@@ -761,5 +761,6 @@ export class SimDataService {
       .filter(item => costFilters.length === 0 ||
         (!costFilters.some(x => x.type === 'max') || costFilters.some(x => x.type === 'max' && item.cost <= +(x.value)))
         && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))));
+    this.listUpdated.emit(this.filteredItems);
   }
 }
