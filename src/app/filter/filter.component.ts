@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
+
 import { SimDataService } from './../services/sim-data.service';
->>>>>>> 2cf1fad069e8f23b8be050ef9b58ebc272c055f7
 import { ItemModel } from './../item.model';
 import { Component, OnInit } from '@angular/core';
 @Component({
@@ -57,13 +55,11 @@ export class FilterComponent implements OnInit {
 
   ngOnInit() {
   }
-<<<<<<< HEAD
-=======
+
 }
 
 export interface FilterModel {
   fieldName: string;
   value: string | number | boolean;
   type?: string;
->>>>>>> 2cf1fad069e8f23b8be050ef9b58ebc272c055f7
 }
