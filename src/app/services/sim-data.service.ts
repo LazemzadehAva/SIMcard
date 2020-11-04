@@ -4,16 +4,24 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { EventEmitter } from '@angular/core';
 import { LocalStorageService } from '../local-storage.service';
+import { Mock } from 'protractor/built/driverProviders';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SimDataService {
 
+
   constructor(
     private storageService: LocalStorageService) {
       this.filteredItems = this.mock = storageService.getFromLocal('mockData');
     }
+
+
+  operator: Mock[] = [];
+  type: Mock[] = [];
+
 
   //data: object[] = [];
 
@@ -40,7 +48,7 @@ export class SimDataService {
   //   return this.filteredItems;
   // }
   listUpdated = new EventEmitter();
-  // mockData: Observable<ItemModel[]> = of(this.mock);
+
 
   getAllSims() {
     return this.mock;
@@ -53,11 +61,27 @@ export class SimDataService {
   addItemToCart(newItem): void {
     this.cart.push(newItem);
   }
+  onOperatorFilter(): string[] {
+     const operatorMap = [...new Set (this.mock.map(x => x.operator ))];
+     return operatorMap;
+  }
+
+ onTypeFilter(): any[] {
+  const typeMap = [...new Set (this.mock.map(x => x.type ))];
+  return typeMap;
+ }
+ getId(): number[] {
+ const allIds = [...new Set (this.mock.map(x => x.id))];
+ return allIds;
+ }
   filterResults(filters: FilterModel[]) {
+
+
     const typeFilters = filters.filter(f => f.fieldName === 'type');
     const operatorFilters = filters.filter(f => f.fieldName === 'operator');
     const costFilters = filters.filter(f => f.fieldName === 'cost');
     this.filteredItems = this.mock
+    // this.operatorMap = this.mock
       .filter(item => typeFilters.length === 0 || typeFilters.some(x => item.type == x.value))
       .filter(item => operatorFilters.length === 0 || operatorFilters.some(x => item.operator == x.value))
       .filter(item => costFilters.length === 0 ||
@@ -65,5 +89,6 @@ export class SimDataService {
         && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))));
     this.listUpdated.emit(this.filteredItems);
     console.log(this.filteredItems);
+
   }
 }
