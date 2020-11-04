@@ -1,6 +1,6 @@
 import { ItemModel } from './../item.model';
 import { SimDataService } from './../services/sim-data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-list',
