@@ -7,7 +7,10 @@ import { FilterComponent } from './filter/filter.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-
+import {SliderModule} from 'primeng/slider';
+import { FormsModule } from '@angular/forms';
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { LocalStorageService } from './local-storage.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,10 +21,12 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SliderModule,
   ],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

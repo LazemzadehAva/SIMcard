@@ -2,6 +2,7 @@
 import { SimDataService } from './../services/sim-data.service';
 import { ItemModel } from './../item.model';
 import { Component, OnInit } from '@angular/core';
+// tslint:disable-next-line: no-unused-expression
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -9,12 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  filter: FilterModel[] = [];
-
 
   constructor(private dataService: SimDataService) {
   }
 
+  filter: FilterModel[] = [];
+  rangeValues: number[] = [50000, 50000000];
+  handleChange() {
+
+  }
   addFilter(model: FilterModel) {
     this.filter.push(model);
   }
@@ -64,3 +68,4 @@ export interface FilterModel {
   value: string | number | boolean;
   type?: string;
 }
+
