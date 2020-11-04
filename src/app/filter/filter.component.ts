@@ -1,3 +1,4 @@
+
 import { SimDataService } from './../services/sim-data.service';
 import { ItemModel } from './../item.model';
 import { Component, OnInit } from '@angular/core';
@@ -55,6 +56,7 @@ export class FilterComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }
 
 export interface FilterModel {

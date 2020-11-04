@@ -12,3 +12,6 @@ background-color: rgb(197, 230, 197);
 /* .container{
     padding:0 5%;
 } */
+.jumbotron:hover{
+    background-color:white;
+}
