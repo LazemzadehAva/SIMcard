@@ -10,13 +10,13 @@
         <h6 class="font-weight-bold mb-3">نوع سیم کارت</h6>
         <div class="form-check pl-0 mb-3">
           <!-- ng-change="onfilter(type)" ng-model="type" -->
-          <input (click)="onTypeClick($event)" data-name="type" data-value="0" value="" type="checkbox" class="form-check-input filled-in" id="et">
+          <input (click)="onTypeClick($event)" data-name="type" data-filter="0" value="" type="checkbox" class="form-check-input filled-in" id="et">
           <label class="form-check-label small text-uppercase card-link-secondary" for="new">اعتباری</label>
         </div>
-        <div class="form-check pl-0 mb-3">
-          <input (click)="onTypeClick($event)" data-name="type" data-value="1" type="checkbox" class="form-check-input filled-in" id="da" >
+         <div class="form-check pl-0 mb-3">
+          <input (click)="onTypeClick($event)" data-name="type" data-filter="1" type="checkbox" class="form-check-input filled-in" id="da" >
           <label class="form-check-label small text-uppercase card-link-secondary" for="used">دائمی</label>
-        </div>
+        </div> 
   
       </section>
 
@@ -24,22 +24,14 @@
       <section class="mb-4">
   
         <h6 class="font-weight-bold mb-3"> اپراتور </h6>
-  
-        <div class="form-check pl-0 mb-3">
-          <input (click)="onTypeClick($event)" data-name="operator" data-value="hamrah" type="checkbox" class="form-check-input filled-in" id="new">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="new">همراه اول</label>
+        <div class="form-check pl-0 mb-3" *ngFor= "let operator of listOfOPerator; let i=index">
+          <input id="operator-{{i}}" (click)="onTypeClick($event)"  data-name="operator" value="{{operator}}" type="checkbox" class="form-check-input filled-in">
+          <label class="form-check-label small text-uppercase card-link-secondary" for="operator-{{i}}">{{ operator }}</label>
         </div>
-        <div class="form-check pl-0 mb-3">
-          <input (click)="onTypeClick($event)" data-name="operator" data-value="irancell" type="checkbox" class="form-check-input filled-in" id="used">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="used">ایرانسل</label>
-        </div>
-        <div class="form-check pl-0 mb-3">
-            <input (click)="onTypeClick($event)" data-name="operator" data-value="raitel" type="checkbox" class="form-check-input filled-in" id="used">
-            <label class="form-check-label small text-uppercase card-link-secondary" for="used">رایتل</label>
-          </div>
   
       </section>
   <hr>
+ 
 
       <section class="mb-4">
   
@@ -61,18 +53,6 @@
           <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="5000000" type="checkbox" class="form-check-input" id="100200" name="materialExampleRadios">
           <label class="form-check-label small text-uppercase card-link-secondary" for="100200">از 5000000 به بالا</label>
         </div>
-
-        <!-- <form>
-          <div class="d-flex align-items-center mt-4 pb-1">
-            <div class="md-form md-outline my-0">
-              <input id="from" type="text" class="form-control mb-0" placeholder="حداقل">
-            </div>
-            <p class="px-2 mb-0 text-muted"> - </p>
-            <div class="md-form md-outline my-0">
-              <input id="to" type="text" class="form-control mb-0" placeholder="حداکثر">
-            </div>
-          </div>
-        </form> -->
   
       </section>
       <!-- Section: Price version 2 -->

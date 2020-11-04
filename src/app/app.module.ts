@@ -7,6 +7,7 @@ import { FilterComponent } from './filter/filter.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from './header/header.component';
     ShoppingCardComponent,
     FilterComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,

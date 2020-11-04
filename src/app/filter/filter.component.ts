@@ -11,7 +11,8 @@ export class FilterComponent implements OnInit {
 
   filter: FilterModel[] = [];
 
-
+ listOfOPerator: string[] = [];
+ listOfType: any[] = [];
   constructor(private dataService: SimDataService) {
   }
 
@@ -24,7 +25,7 @@ export class FilterComponent implements OnInit {
   }
 
   onTypeClick(event) {
-    const newFilter: FilterModel = { fieldName: event.target.dataset.name, value: event.target.dataset.value };
+    const newFilter: FilterModel = { fieldName: event.target.dataset.name, value: event.target.value };
     if (event.target.checked) {
       this.addFilter(newFilter);
     } else {
@@ -55,7 +56,10 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.listOfOPerator = this.dataService.onOperatorFilter();
+    this.listOfType = this.dataService.onTypeFilter();
   }
+
 
 }
 
