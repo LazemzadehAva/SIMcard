@@ -702,21 +702,21 @@ export class SimDataService {
     type: false,
     cost: 510871739,
     status: true,
-    operator: 'رایتل'
+    operator: 'raitel'
   }, {
     id: 99,
     phoneNumber: '792-689-3873',
     type: true,
     cost: 949471944,
     status: false,
-    operator: 'همراه اول'
+    operator: 'hamrah'
   }, {
     id: 100,
     phoneNumber: '199-350-4207',
     type: true,
     cost: 62775393,
     status: true,
-    operator: 'ایرانسل'
+    operator: 'irancell'
   }];
 
   filteredItems: ItemModel[] = this.mock;
@@ -762,5 +762,6 @@ export class SimDataService {
         (!costFilters.some(x => x.type === 'max') || costFilters.some(x => x.type === 'max' && item.cost <= +(x.value)))
         && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))));
     this.listUpdated.emit(this.filteredItems);
+    console.log(this.filteredItems);
   }
 }

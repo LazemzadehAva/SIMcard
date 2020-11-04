@@ -11,7 +11,8 @@ export class FilterComponent implements OnInit {
   filter: FilterModel[] = [];
 
 
-  constructor(private dataService: SimDataService) { }
+  constructor(private dataService: SimDataService) {
+  }
 
   addFilter(model: FilterModel) {
     this.filter.push(model);

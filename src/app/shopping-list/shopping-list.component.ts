@@ -11,7 +11,11 @@ export class ShoppingListComponent implements OnInit {
 
   allSims: ItemModel[] = [];
 
-  constructor(private simDataService: SimDataService) { }
+  constructor(private simDataService: SimDataService) {
+    this.simDataService.listUpdated.subscribe(
+      () => this.allSims = this.simDataService.filteredItems
+    );
+   }
 
   ngOnInit() {
     this.allSims = this.simDataService.filteredItems;
