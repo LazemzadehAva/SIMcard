@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../local-storage.service';
 import { SimDataService } from './../services/sim-data.service';
 import { ItemModel } from './../item.model';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,8 @@ export class ShoppingCardComponent implements OnInit {
 
   cartItems: ItemModel[] = [];
 
-  constructor(private dataService: SimDataService) { }
+  constructor(private dataService: SimDataService,
+              private storageService: LocalStorageService) { }
 
   ngOnInit() {
      this.cartItems = this.dataService.getUserCart();

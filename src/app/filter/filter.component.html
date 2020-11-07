@@ -56,20 +56,24 @@
   
       </section>
       <!-- Section: Price version 2 -->
-      <!-- <!-- <section class="mb-4"> -->
+       <!-- <section class="mb-4">
   
-        <h6 class="font-weight-bold mb-3">Price</h6>
+      <h6 class="font-weight-bold mb-3">Price</h6> 
   
         <div class="slider-price d-flex align-items-center my-4">
-          <span class="font-weight-normal small text-muted mr-2">500000</span>
+          <span class="font-weight-normal small text-muted mr-2">{{min}}</span>
           <form class="multi-range-field w-100 mb-1">
-            <input id="multi" class="multi-range" type="range" />
+            <input id="range" [min]="min" value="50" [max]="max" class="multi-range" type="range" />
           </form>
-          <span class="font-weight-normal small text-muted ml-2">10000000</span>
-        </div>
+          <span class="font-weight-normal small text-muted ml-2">{{max}}</span>
+        </div> 
   
-      </section> 
+      </section>  -->
       <!-- Section: Price version 2 -->
-  
+      <section>
+        <h5>قیمت: {{rangeValues[1] + ' - ' + rangeValues[0]}}</h5>
+        <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="50000" [max]="10000000" [step]="1000"></p-slider>
+      </section>
+ 
     </section>
 
