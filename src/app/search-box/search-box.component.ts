@@ -1,3 +1,5 @@
+import { ItemModel } from './../item.model';
+import { SimDataService } from './../services/sim-data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
-
-  constructor() { }
+ Num: any = 0;
+ searchResult: ItemModel[] = [];
+  constructor(
+    private simDataService: SimDataService
+  ) { }
 
   ngOnInit() {
   }
-
+  searchby() {
+  this.searchResult = this.simDataService.search(this.Num);
+  console.log (this.searchResult);
+  }
 }

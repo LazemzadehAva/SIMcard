@@ -768,6 +768,10 @@ export class SimDataService {
  const allIds = [...new Set (this.mock.map(x => x.id))];
  return allIds;
  }
+ search(num: string): ItemModel[] {
+  const searchResult = this.mock.filter( x => x.phoneNumber.includes(num)) ;
+  return searchResult;
+ }
   filterResults(filters: FilterModel[]) {
 
 
