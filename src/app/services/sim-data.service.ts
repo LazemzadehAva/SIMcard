@@ -23,7 +23,8 @@ export class SimDataService {
   type: Mock[] = [];
 
 
-  // data: object[] = [];
+
+
 
   cart: ItemModel[] = [];
 
@@ -74,6 +75,13 @@ export class SimDataService {
  const allIds = [...new Set (this.mock.map(x => x.id))];
  return allIds;
  }
+
+
+ search(num: string): ItemModel[] {
+  const searchResult = this.mock.filter( x => x.phoneNumber.includes(num)) ;
+  return searchResult;
+ }
+
 
   filterResults(filters: FilterModel[]) {
     const typeFilters = filters.filter(f => f.fieldName === 'type');

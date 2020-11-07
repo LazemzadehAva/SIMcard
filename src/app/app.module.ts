@@ -10,9 +10,9 @@ import { HeaderComponent } from './header/header.component';
 
 import {SliderModule} from 'primeng/slider';
 import { FormsModule } from '@angular/forms';
-import { StorageServiceModule } from 'ngx-webstorage-service';
 import { LocalStorageService } from './local-storage.service';
 import { SearchBoxComponent } from './search-box/search-box.component';
+
 
 
 
@@ -30,7 +30,11 @@ import { SearchBoxComponent } from './search-box/search-box.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+
+    FormsModule,
+
     SliderModule,
+
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]
