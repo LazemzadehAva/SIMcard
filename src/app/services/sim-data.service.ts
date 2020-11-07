@@ -23,7 +23,7 @@ export class SimDataService {
   type: Mock[] = [];
 
 
-  //data: object[] = [];
+  // data: object[] = [];
 
   cart: ItemModel[] = [];
 
@@ -47,8 +47,8 @@ export class SimDataService {
   //   // this.filteredItems = this.filteredItems.filter(el => el.type === typeEl);
   //   return this.filteredItems;
   // }
-  listUpdated = new EventEmitter();
 
+  listUpdated = new EventEmitter();
 
   getAllSims() {
     return this.mock;
@@ -74,15 +74,16 @@ export class SimDataService {
  const allIds = [...new Set (this.mock.map(x => x.id))];
  return allIds;
  }
+
   filterResults(filters: FilterModel[]) {
-
-
     const typeFilters = filters.filter(f => f.fieldName === 'type');
     const operatorFilters = filters.filter(f => f.fieldName === 'operator');
     const costFilters = filters.filter(f => f.fieldName === 'cost');
     this.filteredItems = this.mock
     // this.operatorMap = this.mock
+      // tslint:disable-next-line: triple-equals
       .filter(item => typeFilters.length === 0 || typeFilters.some(x => item.type == x.value))
+      // tslint:disable-next-line: triple-equals
       .filter(item => operatorFilters.length === 0 || operatorFilters.some(x => item.operator == x.value))
       .filter(item => costFilters.length === 0 ||
         (!costFilters.some(x => x.type === 'max') || costFilters.some(x => x.type === 'max' && item.cost <= +(x.value)))
