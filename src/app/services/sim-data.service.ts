@@ -97,7 +97,7 @@ export class SimDataService {
         (!costFilters.some(x => x.type === 'max') || costFilters.some(x => x.type === 'max' && item.cost <= +(x.value)))
         && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))));
     this.listUpdated.emit(this.filteredItems);
-    console.log(this.filteredItems);
+    // console.log(this.filteredItems);
 
   }
 }

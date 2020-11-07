@@ -1,63 +1,69 @@
-<section>
+<section class="pt-3 text-right pr-5">
 
-    <section class="pt-3 text-right pr-5">
-  
-      <h5>دسته بندی ها</h5>
+  <h5>دسته بندی ها</h5>
   <hr>
-    
-      <section class="mb-4">
-  
-        <h6 class="font-weight-bold mb-3">نوع سیم کارت</h6>
-        <div class="form-check pl-0 mb-3">
-          <!-- ng-change="onfilter(type)" ng-model="type" -->
-          <input (click)="onTypeClick($event)" data-name="type" data-filter="0" value="" type="checkbox" class="form-check-input filled-in" id="et">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="new">اعتباری</label>
-        </div>
-         <div class="form-check pl-0 mb-3">
-          <input (click)="onTypeClick($event)" data-name="type" data-filter="1" type="checkbox" class="form-check-input filled-in" id="da" >
-          <label class="form-check-label small text-uppercase card-link-secondary" for="used">دائمی</label>
-        </div> 
-  
-      </section>
+
+  <section class="mb-4">
+
+    <h6 class="font-weight-bold mb-3">نوع سیم کارت</h6>
+    <div class="form-check pl-0 mb-3">
+      <!-- ng-change="onfilter(type)" ng-model="type" -->
+      <input (click)="onTypeClick($event)" data-name="type" data-filter="0" value="" type="checkbox"
+        class="form-check-input filled-in" id="et">
+      <label class="form-check-label small text-uppercase card-link-secondary" for="new">اعتباری</label>
+    </div>
+    <div class="form-check pl-0 mb-3">
+      <input (click)="onTypeClick($event)" data-name="type" data-filter="1" type="checkbox"
+        class="form-check-input filled-in" id="da">
+      <label class="form-check-label small text-uppercase card-link-secondary" for="used">دائمی</label>
+    </div>
+
+  </section>
 
   <hr>
-      <section class="mb-4">
-  
-        <h6 class="font-weight-bold mb-3"> اپراتور </h6>
-        <div class="form-check pl-0 mb-3" *ngFor= "let operator of listOfOPerator; let i=index">
-          <input id="operator-{{i}}" (click)="onTypeClick($event)"  data-name="operator" value="{{operator}}" type="checkbox" class="form-check-input filled-in">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="operator-{{i}}">{{ operator }}</label>
-        </div>
-  
-      </section>
+  <section class="mb-4">
+
+    <h6 class="font-weight-bold mb-3"> اپراتور </h6>
+    <div class="form-check pl-0 mb-3" *ngFor="let operator of listOfOPerator; let i=index">
+      <input id="operator-{{i}}" (click)="onTypeClick($event)" data-name="operator" value="{{operator}}" type="checkbox"
+        class="form-check-input filled-in">
+      <label class="form-check-label small text-uppercase card-link-secondary"
+        for="operator-{{i}}">{{ operator }}</label>
+    </div>
+
+  </section>
   <hr>
- 
 
-      <section class="mb-4">
-  
-        <h6 class="font-weight-bold mb-3">قیمت</h6>
-  
-        <div class="form-check pl-0 mb-3">
-          <input (click)="onRangeClick($event)" data-name="cost" data-maxvalue="500000" type="checkbox" class="form-check-input">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="under25">زیر 500000</label>
-        </div>
-        <div class="form-check pl-0 mb-3">
-          <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="500000" data-maxvalue="2000000" type="checkbox" class="form-check-input" id="2550" name="materialExampleRadios">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="2550">  بین 500000 تا 2000000</label>
-        </div>
-        <div class="form-check pl-0 mb-3">
-          <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="2000000" data-maxvalue="5000000" type="checkbox" class="form-check-input" id="50100" name="materialExampleRadios">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="50100">بین 2000000 تا 5000000</label>
-        </div>
-        <div class="form-check pl-0 mb-3">
-          <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="5000000" type="checkbox" class="form-check-input" id="100200" name="materialExampleRadios">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="100200">از 5000000 به بالا</label>
-        </div>
-  
-      </section>
 
-      <!-- Section: Price version 2 -->
-       <!-- <section class="mb-4">
+  <!-- <section class="mb-4">
+
+    <h6 class="font-weight-bold mb-3">قیمت</h6>
+
+    <div class="form-check pl-0 mb-3">
+      <input (click)="onRangeClick($event)" data-name="cost" data-maxvalue="500000" type="checkbox"
+        class="form-check-input">
+      <label class="form-check-label small text-uppercase card-link-secondary" for="under25">زیر 500000</label>
+    </div>
+    <div class="form-check pl-0 mb-3">
+      <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="500000" data-maxvalue="2000000"
+        type="checkbox" class="form-check-input" name="materialExampleRadios">
+      <label class="form-check-label small text-uppercase card-link-secondary"> بین 500000 تا 2000000</label>
+    </div>
+    <div class="form-check pl-0 mb-3">
+      <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="2000000" data-maxvalue="5000000"
+        type="checkbox" class="form-check-input" name="materialExampleRadios">
+      <label class="form-check-label small text-uppercase card-link-secondary">بین 2000000 تا 5000000</label>
+    </div>
+    <div class="form-check pl-0 mb-3">
+      <input (click)="onRangeClick($event)" data-name="cost" data-minvalue="5000000" type="checkbox"
+        class="form-check-input" name="materialExampleRadios">
+      <label class="form-check-label small text-uppercase card-link-secondary">از 5000000 به بالا</label>
+    </div>
+
+  </section> -->
+
+  <!-- Section: Price version 2 -->
+  <!-- <section class="mb-4">
   
       <h6 class="font-weight-bold mb-3">Price</h6> 
   
@@ -70,12 +76,11 @@
         </div> 
   
       </section>  -->
-      <!-- Section: Price version 2 -->
-      
-      <section>
-        <h5>قیمت: {{rangeValues[1] + ' - ' + rangeValues[0]}}</h5>
-        <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="50000" [max]="10000000" [step]="1000"></p-slider>
-      </section>
- 
-    </section>
+  <!-- Section: Price version 2 -->
 
+  <section>
+    <h5>قیمت: {{rangeValues[1] + ' - ' + rangeValues[0]}}</h5>
+    <p-slider [(ngModel)]="rangeValues" [min]="0" [max]="500000000" [range]="true" [step]="1000" (onChange)="onRangeClick($event)">
+    </p-slider>
+  </section>
+</section>
