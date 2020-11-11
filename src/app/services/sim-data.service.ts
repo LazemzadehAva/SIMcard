@@ -21,8 +21,7 @@ export class SimDataService {
 
   operator: Mock[] = [];
   type: Mock[] = [];
-
-
+  filters: FilterModel[] = [];
 
 
 
@@ -51,6 +50,7 @@ export class SimDataService {
 
   listUpdated = new EventEmitter();
 
+
   getAllSims() {
     return this.mock;
   }
@@ -77,16 +77,18 @@ export class SimDataService {
  }
 
 
- search(num: string): ItemModel[] {
-  const searchResult = this.mock.filter( x => x.phoneNumber.includes(num)) ;
-  return searchResult;
- }
+//  search(num: string): ItemModel[] {
+//   const searchResult: FilterModel = this.mock.filter( x => x.phoneNumber.includes(num)) ;
+//   this.filters = this.filters.filter(item => !(item.fieldName === 'name' && (item.type === 'min' || item.type === 'max')));
+//   this.addFilter(searchResult);
+//  }
 
 
-  filterResults(filters: FilterModel[]) {
-    const typeFilters = filters.filter(f => f.fieldName === 'type');
-    const operatorFilters = filters.filter(f => f.fieldName === 'operator');
-    const costFilters = filters.filter(f => f.fieldName === 'cost');
+  filterResults() {
+    const typeFilters = this.filters.filter(f => f.fieldName === 'type');
+    const operatorFilters = this.filters.filter(f => f.fieldName === 'operator');
+    const costFilters = this.filters.filter(f => f.fieldName === 'cost');
+    const phoneNumberFilters = this.filters.filter(f => f.fieldName === 'phoneNumber');
     this.filteredItems = this.mock
     // this.operatorMap = this.mock
       // tslint:disable-next-line: triple-equals
@@ -95,9 +97,10 @@ export class SimDataService {
       .filter(item => operatorFilters.length === 0 || operatorFilters.some(x => item.operator == x.value))
       .filter(item => costFilters.length === 0 ||
         (!costFilters.some(x => x.type === 'max') || costFilters.some(x => x.type === 'max' && item.cost <= +(x.value)))
-        && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))));
+        && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))))
+        // tslint:disable-next-line: max-line-length
+        .filter(item => phoneNumberFilters.length === 0 || phoneNumberFilters.some(x => item.phoneNumber.split('-').join('').includes(x.value as string)));
     this.listUpdated.emit(this.filteredItems);
-    // console.log(this.filteredItems);
-
+    console.log(this.filteredItems);
   }
 }

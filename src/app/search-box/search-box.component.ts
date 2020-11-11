@@ -1,3 +1,4 @@
+import { FilterModel } from './../filter/filter.component';
 import { ItemModel } from './../item.model';
 import { SimDataService } from './../services/sim-data.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +18,12 @@ export class SearchBoxComponent implements OnInit {
   ngOnInit() {
   }
   searchby() {
-  this.searchResult = this.simDataService.search(this.Num);
-  console.log (this.searchResult);
+    console.log(this.Num);
+    const newFilterItem: FilterModel = {fieldName: 'phoneNumber' , value: this.Num };
+    this.simDataService.filters = this.simDataService.filters.filter((item) => !(item.fieldName === 'phoneNumber'));
+    if (newFilterItem.value !== null) {
+  this.simDataService.filters.push(newFilterItem);
+  }
+    this.simDataService.filterResults();
   }
 }

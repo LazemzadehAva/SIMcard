@@ -22,15 +22,12 @@ export class FilterComponent implements OnInit {
   }
 
   rangeValues: number[] = [50000, 10000000];
-  handleChange(e) {
-}
   addFilter(model: FilterModel) {
-    this.filters.push(model);
+    this.dataService.filters.push(model);
   }
 
   removeFilter(model: FilterModel) {
-     this.filters = this.filters.filter(item => !(item.fieldName === model.fieldName && item.value === model.value));
-    
+    this.dataService.filters = this.dataService.filters.filter(item => !(item.fieldName === model.fieldName && item.value === model.value));
   }
 
   onTypeClick(event) {
@@ -40,13 +37,14 @@ export class FilterComponent implements OnInit {
     } else {
       this.removeFilter(newFilter);
     }
-    this.dataService.filterResults(this.filters);
+    this.dataService.filterResults();
   }
 
   onRangeClick(event) {
     const minFilter: FilterModel = {fieldName: 'cost' , value: event.values[0], type: 'min'};
     const maxFilter: FilterModel = {fieldName: 'cost' , value: event.values[1], type: 'max'};
-    this.filters = this.filters.filter(item => !(item.fieldName === 'cost' && (item.type === 'min' || item.type === 'max')));
+    this.dataService.filters = this.dataService.filters
+    .filter(item => !(item.fieldName === 'cost' && (item.type === 'min' || item.type === 'max')));
     this.addFilter(minFilter);
     this.addFilter(maxFilter);
 
@@ -68,7 +66,7 @@ export class FilterComponent implements OnInit {
     //     this.removeFilter(newFilter);
     //   }
     // }
-    this.dataService.filterResults(this.filters);
+    this.dataService.filterResults();
   }
 
   ngOnInit() {
