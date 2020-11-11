@@ -1,8 +1,5 @@
-import { ItemModel } from './item.model';
+import { ItemModel } from '../item.model';
 import { Injectable } from '@angular/core';
-import { Inject } from '@angular/core';
-import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
-import { inject } from '@angular/core/testing';
 const STORAGE_KEY = 'local_shoppinglist';
 @Injectable({
   providedIn: 'root'

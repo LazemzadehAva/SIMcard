@@ -1,7 +1,7 @@
-import { ShoppingCardComponent } from './shopping-card/shopping-card.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { ShoppingCardComponent } from './public/shopping-card/shopping-card.component';
+import { ShoppingListComponent } from './shared/shopping-list/shopping-list.component';
 
 
 const routes: Routes = [

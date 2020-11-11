@@ -1,7 +1,8 @@
-import { LocalStorageService } from './../local-storage.service';
-import { SimDataService } from './../services/sim-data.service';
-import { ItemModel } from './../item.model';
+
 import { Component, OnInit } from '@angular/core';
+import { ItemModel } from 'src/app/item.model';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { SimDataService } from 'src/app/services/sim-data.service';
 
 @Component({
   selector: 'app-shopping-card',

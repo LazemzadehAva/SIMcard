@@ -1,7 +1,6 @@
 
-import { SimDataService } from './../services/sim-data.service';
-import { ItemModel } from './../item.model';
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import { SimDataService } from 'src/app/services/sim-data.service';
 // tslint:disable-next-line: no-unused-expression
 @Component({
   selector: 'app-filter',
