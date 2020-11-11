@@ -1,7 +1,7 @@
 
 import { SimDataService } from './../services/sim-data.service';
 import { ItemModel } from './../item.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 // tslint:disable-next-line: no-unused-expression
 @Component({
   selector: 'app-filter',
@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
+  [x: string]: any;
 
 
 
-  filter: FilterModel[] = [];
+//  filters: FilterModel[] = [];
 
  listOfOPerator: string[] = [];
  listOfType: any[] = [];
@@ -20,16 +21,13 @@ export class FilterComponent implements OnInit {
   constructor(private dataService: SimDataService) {
   }
 
-  rangeValues: number[] = [50000, 50000000];
-  handleChange() {
-
-  }
+  rangeValues: number[] = [50000, 10000000];
   addFilter(model: FilterModel) {
-    this.filter.push(model);
+    this.dataService.filters.push(model);
   }
 
   removeFilter(model: FilterModel) {
-    this.filter = this.filter.filter(item => !(item.fieldName === model.fieldName && item.value === model.value));
+    this.dataService.filters = this.dataService.filters.filter(item => !(item.fieldName === model.fieldName && item.value === model.value));
   }
 
   onTypeClick(event) {
@@ -39,28 +37,36 @@ export class FilterComponent implements OnInit {
     } else {
       this.removeFilter(newFilter);
     }
-    this.dataService.filterResults(this.filter);
+    this.dataService.filterResults();
   }
 
   onRangeClick(event) {
-    let newFilter: FilterModel;
-    if (event.target.dataset.minvalue) {
-      newFilter = { fieldName: event.target.dataset.name, value: event.target.dataset.minvalue, type: 'min' };
-      if (event.target.checked) {
-        this.addFilter(newFilter);
-      } else {
-        this.removeFilter(newFilter);
-      }
-    }
-    if (event.target.dataset.maxvalue) {
-      newFilter = { fieldName: event.target.dataset.name, value: event.target.dataset.maxvalue, type: 'max' };
-      if (event.target.checked) {
-        this.addFilter(newFilter);
-      } else {
-        this.removeFilter(newFilter);
-      }
-    }
-    this.dataService.filterResults(this.filter);
+    const minFilter: FilterModel = {fieldName: 'cost' , value: event.values[0], type: 'min'};
+    const maxFilter: FilterModel = {fieldName: 'cost' , value: event.values[1], type: 'max'};
+    this.dataService.filters = this.dataService.filters
+    .filter(item => !(item.fieldName === 'cost' && (item.type === 'min' || item.type === 'max')));
+    this.addFilter(minFilter);
+    this.addFilter(maxFilter);
+
+    // let newFilter: FilterModel;
+    // if (event.target.dataset.minvalue) {
+    //   newFilter = { fieldName: event.target.dataset.name, value: event.target.dataset.minvalue, type: 'min' };
+    //   console.log(newFilter);
+    //   if (event.target.checked) {
+    //     this.addFilter(newFilter);
+    //   } else {
+    //     this.removeFilter(newFilter);
+    //   }
+    // }
+    // if (event.target.dataset.maxvalue) {
+    //   newFilter = { fieldName: event.target.dataset.name, value: event.target.dataset.maxvalue, type: 'max' };
+    //   if (event.target.checked) {
+    //     this.addFilter(newFilter);
+    //   } else {
+    //     this.removeFilter(newFilter);
+    //   }
+    // }
+    this.dataService.filterResults();
   }
 
   ngOnInit() {
