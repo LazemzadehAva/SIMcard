@@ -25,6 +25,7 @@ export class ShoppingCardComponent implements OnInit {
     // }
     // );
   }
+
   delete(id: number) {
     this.cartItems = this.cartItems.filter(x => x.id !== id);
   }
