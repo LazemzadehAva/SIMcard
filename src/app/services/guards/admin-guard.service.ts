@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import {
     CanActivate,
     ActivatedRouteSnapshot,
@@ -6,6 +7,9 @@ import {
 } from '@angular/router';
 import { AuthService } from '../auth.service';
 
+@Injectable({
+    providedIn: 'root'
+  })
 
 export class AuthGaurd implements CanActivate {
     constructor(private router: Router, private authservice: AuthService) { }
@@ -13,7 +17,6 @@ export class AuthGaurd implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | import('@angular/router').UrlTree | import('rxjs').Observable<boolean | import('@angular/router').UrlTree> | Promise<boolean | import('@angular/router').UrlTree> {
         if (!this.authservice.isAdmin()) {
             this.router.navigate(['error403']);
-            this.router.navigate(['error404']);
             return false;
         }
         return true;
