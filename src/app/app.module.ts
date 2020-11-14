@@ -9,6 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './public/public.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { Error403Component } from './errors/error403/error403.component';
+import { Error404Component } from './errors/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     FooterComponent,
     SearchBoxComponent,
+    Error403Component,
+    Error404Component,
   ],
   imports: [
     FormsModule,
