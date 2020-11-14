@@ -1,3 +1,5 @@
+import { AuthGaurd } from './services/guards/auth-guard.service';
+import { Error404Component } from './errors/error404/error404.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
@@ -7,8 +9,9 @@ import { ShoppingListComponent } from './shared/shopping-list/shopping-list.comp
 
 const routes: Routes = [
     { path: '', component: ShoppingListComponent },
-    { path: 'shopping-card', component: ShoppingCardComponent },
-    { path: 'login', component: LoginComponent}
+    { path: 'shopping-card', component: ShoppingCardComponent, canActivate: [AuthGaurd] },
+    { path: 'login', component: LoginComponent},
+    {path: '**', component: Error404Component}
   ];
 // configures NgModule imports and exports
 @NgModule({
