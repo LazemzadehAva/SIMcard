@@ -1,12 +1,15 @@
+import { AddNewSimComponent } from './add-new-sim/add-new-sim.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AddNewSimComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class AdminModule { }

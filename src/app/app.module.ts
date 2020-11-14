@@ -12,10 +12,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Error403Component } from './errors/error403/error403.component';
 import { Error404Component } from './errors/error404/error404.component';
-
-
-
 import { LoginComponent } from './login/login.component';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -25,9 +24,7 @@ import { LoginComponent } from './login/login.component';
     SearchBoxComponent,
     Error403Component,
     Error404Component,
-    LoginComponent
-
-
+    LoginComponent,
   ],
   imports: [
     FormsModule,
@@ -35,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     SharedModule,
     PublicModule,
+    CommonModule,
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

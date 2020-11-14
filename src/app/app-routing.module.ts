@@ -9,6 +9,7 @@ import { ShoppingListComponent } from './shared/shopping-list/shopping-list.comp
 
 const routes: Routes = [
     { path: '', component: ShoppingListComponent },
+    { path: 'admin', component: ShoppingListComponent, data: {mode: 'admin'} },
     { path: 'shopping-card', component: ShoppingCardComponent, canActivate: [AuthGaurd] },
     { path: 'login', component: LoginComponent},
     {path: '**', component: Error404Component}
