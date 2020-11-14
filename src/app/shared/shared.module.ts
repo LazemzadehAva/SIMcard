@@ -24,7 +24,7 @@ import { LayoutComponent } from './layout/layout.component';
   imports: [
     CommonModule,
     SliderModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class SharedModule { }
