@@ -20,6 +20,10 @@ export class AuthGaurd implements CanActivate {
             this.router.navigate(['login']);
             return false;
         }
+        else if(this.authservice.isAdmin()) {
+            this.router.navigate(['']);
+            return false;
+        }
         return true;
     }
 }
