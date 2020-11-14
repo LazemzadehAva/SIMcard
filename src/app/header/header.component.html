@@ -17,8 +17,6 @@
   <div class="collapse navbar-collapse container">
     <app-search-box></app-search-box>  
   </div>
-    
-  
     <div class="collapse navbar-collapse container" id="navbarNav">
         <a class="navbar-brand" href="#"><img src="app\image\sim-card.png" alt=""></a>
       <ul class="navbar-nav">
@@ -27,6 +25,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/shopping-card"><i class="fa fa-2x fa-shopping-cart"></i></a>
+        </li>
+        <li *ngIf="user === ''">
+          <a class="nav-link" routerLink="/login"><i class="fas fa-key"></i></a>
         </li>
       </ul>
     </div>

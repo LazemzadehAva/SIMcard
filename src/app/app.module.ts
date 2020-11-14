@@ -1,22 +1,31 @@
 import { SharedModule } from './shared/shared.module';
 
+import { SearchBoxComponent } from './search-box/search-box.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { LocalStorageService } from './services/local-storage.service';
 import { AppRoutingModule } from './app-routing.module';
+import { PublicModule } from './public/public.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    HeaderComponent,
+    FooterComponent,
+    SearchBoxComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    PublicModule,
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { FilterModel } from './../filter/filter.component';
+import { FilterModel } from '../shared/filter/filter.component';
 import { Component, OnInit } from '@angular/core';
 import { SimDataService } from 'src/app/services/sim-data.service';
 import { ItemModel } from 'src/app/item.model';
