@@ -13,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { Error403Component } from './errors/error403/error403.component';
 import { Error404Component } from './errors/error404/error404.component';
 
+
+
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -24,6 +26,8 @@ import { LoginComponent } from './login/login.component';
     Error403Component,
     Error404Component,
     LoginComponent
+
+
   ],
   imports: [
     FormsModule,
