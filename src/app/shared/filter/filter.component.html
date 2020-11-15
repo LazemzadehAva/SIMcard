@@ -79,8 +79,8 @@
   <!-- Section: Price version 2 -->
 
   <section>
-    <h5>قیمت: {{rangeValues[1] + ' - ' + rangeValues[0]}}</h5>
-    <p-slider [(ngModel)]="rangeValues" [min]="0" [max]="500000000" [range]="true" [step]="1000" (onChange)="onRangeClick($event)">
+    <h5>قیمت: {{rangeValues[1] + ' تا ' + rangeValues[0]}}</h5>
+    <p-slider [(ngModel)]="rangeValues" [min]="50000" [max]="10000000" [range]="true" [step]="1000" (onChange)="onRangeClick($event)">
     </p-slider>
   </section>
 </section>

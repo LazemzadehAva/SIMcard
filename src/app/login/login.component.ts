@@ -10,19 +10,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   signIn: FormGroup;
-  constructor(private authServive: AuthService,
-              private router: Router) { }
+  constructor(
+    private authServive: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.signIn = new FormGroup ({
-      username: new FormControl() ,
+    this.signIn = new FormGroup({
+      username: new FormControl(),
       password: new FormControl(),
     });
   }
   submit() {
-  if (this.authServive.logIn(this.signIn.value)) {
-  this.router.navigate(['']);
-  }
+    if (this.authServive.logIn(this.signIn.value)) {
+      this.router.navigate(['']);
+    }
   }
 }
 

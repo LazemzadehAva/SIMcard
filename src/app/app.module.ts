@@ -14,6 +14,7 @@ import { Error403Component } from './errors/error403/error403.component';
 import { Error404Component } from './errors/error404/error404.component';
 import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CommonModule } from '@angular/common';
     SharedModule,
     PublicModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
 
   ],
   providers: [LocalStorageService],
