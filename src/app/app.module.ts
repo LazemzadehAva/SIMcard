@@ -37,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     BrowserAnimationsModule,
 
+
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]

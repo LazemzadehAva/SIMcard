@@ -30,6 +30,7 @@
               "node_modules/primeng-lts/resources/themes/nova-light/theme.css",
               "node_modules/primeng-lts/resources/primeng.min.css",
               "src/styles.css"
+
             ],
             "scripts": []
           },

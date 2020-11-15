@@ -6,10 +6,23 @@
             <label for="exampleInputPassword">نام کاربری</label>
             <input formControlName="username" type="user" class="form-control" id="exampleInputPassword">
         </div>
+        <span
+            *ngIf="!signIn.get('username').valid && signIn.get('username').touched"
+            class="help-block">
+            <span *ngIf="signIn.get('username').hasError('maxLength')"></span>
+            <span *ngIf="signIn.get('username').errors['nameIsForbidden']">This name is invalid!</span>
+            <span *ngIf="signIn.get('username').errors['required']">This field is required!</span>
+        </span>
         <div class="form-group card-title">
             <label for="exampleInputPassword1">رمز عبور</label>
             <input  formControlName="password" type="password" class="form-control card-title" id="exampleInputPassword1">
         </div>
+        <span
+            *ngIf="!signIn.get('password').valid && signIn.get('password').touched"
+            class="help-block">
+            <span *ngIf="signIn.get('passsword').errors['nameIsForbidden']">This name is invalid!</span>
+            <span *ngIf="signIn.get('passsword').errors['required']">This field is required!</span>
+          </span>
         <button type="submit" class="btn btn-primary card-title">ورود</button>
     </div>
     
