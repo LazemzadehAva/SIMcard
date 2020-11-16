@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router) {
     this.isAdmin = authService.isAdmin();
-    console.log(this.isAdmin)
+    console.log(this.isAdmin);
 
   }
 
