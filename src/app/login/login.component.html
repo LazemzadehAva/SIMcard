@@ -1,29 +1,30 @@
-
 <form class="card text-center " [formGroup]="signIn" (ngSubmit)="submit()">
 
-    <div class="card-body">
-        <div class="form-group card-title">
-            <label for="exampleInputPassword">نام کاربری</label>
-            <input formControlName="username" type="user" class="form-control" id="exampleInputPassword">
-        </div>
-        <span
-            *ngIf="!signIn.get('username').valid && signIn.get('username').touched"
-            class="help-block">
-            <span *ngIf="signIn.get('username').hasError('maxLength')"></span>
-            <span *ngIf="signIn.get('username').errors['nameIsForbidden']">This name is invalid!</span>
-            <span *ngIf="signIn.get('username').errors['required']">This field is required!</span>
-        </span>
-        <div class="form-group card-title">
-            <label for="exampleInputPassword1">رمز عبور</label>
-            <input  formControlName="password" type="password" class="form-control card-title" id="exampleInputPassword1">
-        </div>
-        <span
-            *ngIf="!signIn.get('password').valid && signIn.get('password').touched"
-            class="help-block">
-            <span *ngIf="signIn.get('passsword').errors['nameIsForbidden']">This name is invalid!</span>
-            <span *ngIf="signIn.get('passsword').errors['required']">This field is required!</span>
-          </span>
-        <button type="submit" class="btn btn-primary card-title">ورود</button>
+  <div class="card-body">
+    <div class="form-group card-title">
+      <label for="exampleInputPassword">نام کاربری</label>
+      <input formControlName="username" type="user" class="form-control" id="exampleInputPassword">
     </div>
-    
+    <span *ngIf="signIn.get('username').invalid && signIn.get('username').touched" class="help-block">
+      <span *ngIf="signIn.get('username').hasError('pattern')">Username can not have a number</span>
+      <hr>
+      <span *ngIf="signIn.get('username').hasError('minlength')">This name is less than 5 character</span>
+      <span *ngIf="signIn.get('username').errors['nameIsForbidden']">This name is invalid!</span>
+      <span *ngIf="signIn.get('username').errors['required']">This field is required!</span>
+    </span>
+    <div class="form-group card-title">
+      <label for="exampleInputPassword1">رمز عبور</label>
+      <input formControlName="password" type="password" class="form-control card-title" id="exampleInputPassword1">
+    </div>
+    <span *ngIf="!signIn.get('password').valid && signIn.get('password').touched" class="help-block">
+      <span *ngIf="signIn.get('password').hasError('pattern')">Password can not have a number</span>
+      <hr>
+      <span *ngIf="signIn.get('password').hasError('minlength')">This name is less than 5 character</span>
+
+      <span *ngIf="signIn.get('password').errors['nameIsForbidden']">This name is invalid!</span>
+      <span *ngIf="signIn.get('password').errors['required']">This field is required!</span>
+    </span>
+    <button type="submit" class="btn btn-primary card-title">ورود</button>
+  </div>
+
 </form>

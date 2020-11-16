@@ -13,13 +13,16 @@ export class LoginComponent implements OnInit {
   forbiddenUsernames = ['Chris', 'Anna'];
   constructor(
     private authServive: AuthService,
-    private router: Router) { }
+    private router: Router) {
+    this.signIn = new FormGroup({
+      // tslint:disable-next-line: max-line-length
+      username: new FormControl(null, [Validators.required, this.forbiddenNames.bind(this), Validators.minLength(5), Validators.pattern('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]')]),
+      // tslint:disable-next-line: max-line-length
+      password: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]')]),
+    });
+  }
 
   ngOnInit() {
-    this.signIn = new FormGroup({
-      username: new FormControl(null, [Validators.required , this.forbiddenNames.bind(this), Validators.maxLength(5)]),
-      password: new FormControl(null, [Validators.required , Validators.maxLength(5)]),
-    });
   }
   submit() {
     console.log(this.signIn);
@@ -34,10 +37,10 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-  forbiddenNames(control: FormControl): {[s: string]: boolean} {
+  forbiddenNames(control: FormControl): { [s: string]: boolean } {
     if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       // tslint:disable-next-line: object-literal-key-quotes
-      return {'nameIsForbidden': true};
+      return { 'nameIsForbidden': true };
     }
     return null;
   }
