@@ -16,9 +16,9 @@ export class LoginComponent implements OnInit {
     private router: Router) {
     this.signIn = new FormGroup({
       // tslint:disable-next-line: max-line-length
-      username: new FormControl(null, [Validators.required, this.forbiddenNames.bind(this), Validators.minLength(5), Validators.pattern('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]')]),
+      username: new FormControl(null, [Validators.required, this.forbiddenNames.bind(this), Validators.minLength(5), Validators.pattern('[a-zA-Z ]*')]),
       // tslint:disable-next-line: max-line-length
-      password: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]')]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z ]*')]),
     });
   }
 

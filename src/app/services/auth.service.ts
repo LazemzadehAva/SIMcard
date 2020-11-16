@@ -15,19 +15,19 @@ export class AuthService {
 
     isAdmin(): boolean {
         const roles = localStorage.getItem('roles');
-        if (this.isAuthenticated() && roles.includes('admin')) {
+        if (this.isAuthenticated() && roles.includes('Admin')) {
             return true;
         }
         return false;
     }
 
     logIn(model): boolean {
-        if (model.username === 'admin' && model.password === 'admin') {
+        if (model.username === 'Admin' && model.password === 'Admin') {
             localStorage.setItem('token', 'xxx');
-            localStorage.setItem('roles', 'admin');
+            localStorage.setItem('roles', 'Admin');
             localStorage.setItem('name', 'Admin User');
             return true;
-        } else if (model.username === 'guest' && model.password === 'guest') {
+        } else if (model.username === 'Guest' && model.password === 'Guest') {
             localStorage.setItem('token', 'xxx');
             localStorage.setItem('roles', 'public');
             localStorage.setItem('name', 'public guest');
