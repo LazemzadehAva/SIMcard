@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { EventEmitter } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
-import { Mock } from 'protractor/built/driverProviders';
 import { FilterModel } from '../shared/filter/filter.component';
 
 
@@ -19,8 +18,8 @@ export class SimDataService {
     }
 
 
-  operator: Mock[] = [];
-  type: Mock[] = [];
+  // operator: Mock[] = [];
+  // type: Mock[] = [];
   filters: FilterModel[] = [];
 
 
@@ -103,4 +102,5 @@ export class SimDataService {
     this.listUpdated.emit(this.filteredItems);
     console.log(this.filteredItems);
   }
+  
 }

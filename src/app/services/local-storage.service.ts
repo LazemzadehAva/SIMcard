@@ -707,6 +707,9 @@ export class LocalStorageService {
     operator: 'irancell'
   }];
 
+getSim(id: number) {
+  return this.data.find(x => x.id === id);
+}
   constructor() {
     this.saveInLocal('mockData', this.data);
    }

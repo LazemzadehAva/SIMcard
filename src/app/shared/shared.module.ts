@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { AddNewSimComponent } from '../admin/add-new-sim/add-new-sim.component';
-
+import {SplitButtonModule} from 'primeng-lts/splitbutton';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,9 @@ import { AddNewSimComponent } from '../admin/add-new-sim/add-new-sim.component';
     FormsModule,
     RouterModule,
     AdminModule,
+    SplitButtonModule
   ],
-  entryComponents:[
+  entryComponents: [
     AddNewSimComponent
   ]
 })

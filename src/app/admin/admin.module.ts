@@ -1,12 +1,13 @@
-
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddNewSimComponent } from './add-new-sim/add-new-sim.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {DynamicDialogModule} from 'primeng-lts/dynamicdialog';
-// import { DialogService } from 'primeng/dynamicDialog';
-// import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicDialog';
-
+import {DropdownModule} from 'primeng-lts/dropdown';
+import { InputTextModule } from 'primeng-lts/inputtext';
+import {RadioButtonModule} from 'primeng-lts/radiobutton';
+import {ButtonModule} from 'primeng-lts/button';
+import {InputMaskModule} from 'primeng-lts/inputmask';
 @NgModule({
   declarations: [
     AddNewSimComponent,
@@ -15,6 +16,12 @@ import {DynamicDialogModule} from 'primeng-lts/dynamicdialog';
     CommonModule,
     FormsModule,
     DynamicDialogModule,
+    DropdownModule,
+    InputTextModule,
+    RadioButtonModule,
+    ButtonModule,
+    ReactiveFormsModule,
+    InputMaskModule
   ],
   entryComponents: [
     AddNewSimComponent

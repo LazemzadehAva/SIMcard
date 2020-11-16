@@ -2,3 +2,7 @@
 
 @import url("~bootstrap/dist/css/bootstrap.min.css");
 @import url("~@fortawesome/fontawesome-free/css/all.min.css");
+@import url("~primeicons/primeicons.css");
+@import url("~primeng-lts/resources/themes/nova-light/theme.css");
+@import url("~primeng-lts/resources/primeng.min.css");
+@import url("~primeflex/primeflex.css");

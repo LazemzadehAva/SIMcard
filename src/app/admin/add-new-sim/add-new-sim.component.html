@@ -1,23 +1,65 @@
-
+<form [formGroup]="adminForm" (ngSubmit)="submit()">
   <div class="p-fluid p-formgrid p-grid">
-    <div class="p-field p-col">
-      <label for="firstname1">Firstname</label>
-      <input id="firstname1" type="text" pInputText>
-    </div>
-    <div class="p-field p-col">
-      <label for="lastname1">Lastname</label>
-      <input id="lastname1" type="text" pInputText>
-    </div>
-  </div>
-  <h3>Horizontal Checkbox</h3>
-  <div class="p-formgroup-inline">
-    <div class="p-field-checkbox">
-      <!-- <p-checkbox name="city3" value="Chicago" inputId="city3"></p-checkbox> -->
-      <label for="city3">Chicago</label>
-    </div>
-    <div class="p-field-checkbox">
-      <!-- <p-checkbox name="city4" value="Los Angeles" inputId="city4"></p-checkbox> -->
-      <label for="city4">Los Angeles</label>
-    </div>
-  </div>
 
+    <div class="p-col-12 p-md-4">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+        <p-inputMask mask="999-999-9999" placeholder="999-999-9999" formControlName="phoneNumber"></p-inputMask>
+      </div>
+    </div>
+
+
+    <div class="p-col-12 p-md-4">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">تومان</span>
+        <input type="text" pInputText placeholder="قیمت" formControlName="cost">
+      </div>
+      <div *ngIf="adminForm.controls.cost.touched">
+        <span *ngIf="adminForm.controls.cost.errors['min'] || adminForm.controls.cost.errors['max']">
+          قیمت باید بین 50000 و 10000000 باشد
+        </span>
+        <span *ngIf="adminForm.controls.cost.errors['pattern']">
+          قیمت باید به عدد باشد
+        </span>
+      </div>
+    </div>
+
+
+    <div class="p-col-12 p-md-4">
+      <p-dropdown [options]="simsType" formControlName="operator" editable="true" placeholder="انتخاب اپراتور">
+      </p-dropdown>
+      <p>اپراتور: {{selectedOperator}}</p>
+    </div>
+
+  </div>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-col-12 p-md-4">
+      <p-button type="submit" class="d-flex justify-content-center" icon="pi pi-check" [disabled]="!adminForm.valid">
+      </p-button>
+    </div>
+    <div class="p-col-12 p-md-4">
+
+      <div class="p-grid" style="width:250px;margin-bottom:10px">
+        <div class="p-col-12">
+          <p-radioButton name="type" value="0" label="دائمی" inputId="preopt1" formControlName="type">
+          </p-radioButton>
+        </div>
+        <div class="p-col-12">
+          <p-radioButton name="type" value="1" label="اعتباری" inputId="preopt2" formControlName="type">
+          </p-radioButton>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-12 p-md-4">
+      <div class="p-grid" style="width:250px;margin-bottom:10px">
+        <div class="p-col-12">
+          <p-radioButton name="status" value="0" label="صفر" inputId="preopt1" formControlName="status"></p-radioButton>
+        </div>
+        <div class="p-col-12">
+          <p-radioButton name="status" value="1" label="کارکرده" inputId="preopt2" formControlName="status">
+          </p-radioButton>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
