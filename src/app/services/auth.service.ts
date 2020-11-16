@@ -15,19 +15,19 @@ export class AuthService {
 
     isAdmin(): boolean {
         const roles = localStorage.getItem('roles');
-        if (this.isAuthenticated() && roles.includes('Admin')) {
+        if (this.isAuthenticated() && roles.includes('admin')) {
             return true;
         }
         return false;
     }
 
     logIn(model): boolean {
-        if (model.username === 'Admin' && model.password === 'Admin') {
+        if (model.username === 'admin' && model.password === 'admin') {
             localStorage.setItem('token', 'xxx');
-            localStorage.setItem('roles', 'Admin');
+            localStorage.setItem('roles', 'admin');
             localStorage.setItem('name', 'Admin User');
             return true;
-        } else if (model.username === 'Guest' && model.password === 'Guest') {
+        } else if (model.username === 'guest' && model.password === 'guest') {
             localStorage.setItem('token', 'xxx');
             localStorage.setItem('roles', 'public');
             localStorage.setItem('name', 'public guest');
@@ -35,4 +35,5 @@ export class AuthService {
         }
         return false;
     }
+
 }

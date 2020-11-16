@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
   submit() {
     console.log(this.signIn);
 
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+
   forbiddenNames(control: FormControl): { [s: string]: boolean } {
     if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       // tslint:disable-next-line: object-literal-key-quotes
