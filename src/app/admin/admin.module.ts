@@ -8,6 +8,12 @@ import { InputTextModule } from 'primeng-lts/inputtext';
 import {RadioButtonModule} from 'primeng-lts/radiobutton';
 import {ButtonModule} from 'primeng-lts/button';
 import {InputMaskModule} from 'primeng-lts/inputmask';
+
+
+// import { DialogService } from 'primeng/dynamicDialog';
+// import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicDialog';
+
+
 @NgModule({
   declarations: [
     AddNewSimComponent,

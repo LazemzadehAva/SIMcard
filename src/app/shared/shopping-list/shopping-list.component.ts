@@ -1,11 +1,17 @@
+
 import { LocalStorageService } from 'src/app/services/local-storage.service';
-import { Component, Input, OnInit } from '@angular/core';
+
+
+import { Component, OnInit } from '@angular/core';
+
 import { ItemModel } from 'src/app/item.model';
 import { SimDataService } from 'src/app/services/sim-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { AddNewSimComponent } from 'src/app/admin/add-new-sim/add-new-sim.component';
+
 import { DialogService } from 'primeng-lts/dynamicdialog';
 import { MessageService } from 'primeng-lts/api';
+
 
 
 
@@ -23,29 +29,16 @@ export class ShoppingListComponent implements OnInit {
   constructor(
     private simDataService: SimDataService,
     activatedroute: ActivatedRoute,
-    public dialogService: DialogService,
     private localStorageService: LocalStorageService,
-    private messageService: MessageService
+    private messageService: MessageService,
+
+    public dialogService: DialogService
+
   ) {
     this.simDataService.listUpdated.subscribe(
       () => this.allSims = this.simDataService.filteredItems
     );
     activatedroute.data.subscribe(x => this.isAdmin = x.mode === 'admin');
-  }
-
-  getDropMenu(context: ItemModel) {
-    return [
-      {
-        label: 'ویرایش', icon: 'pi pi-refresh', command: () => {
-          this.update(context.id);
-        }
-
-        // {
-        //   label: 'حذف', icon: 'pi pi-times', command: () => {
-        //     this.delete();
-        //   }
-      },
-    ];
   }
 
   ngOnInit() {

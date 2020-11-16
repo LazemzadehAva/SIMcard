@@ -23,19 +23,16 @@
         <li class="nav-item active">
           <a class="nav-link" routerLink=""><i class="fas fa-th-list"></i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/shopping-card"><i class="fa fa-shopping-cart"></i></a>
+        <li class="nav-item" *ngIf="!isAdmin">
+          <a class="nav-link" routerLink="/shopping-card" ><i class="fa fa-shopping-cart" ></i></a>
         </li>
         <li >
-        <li *ngIf="user === '' else user_name">
-
+        <li >
           <a class="nav-link" routerLink="/login"><i class="fas fa-key"></i></a>
         </li>
-        <ng-template #user_name>
-          <li>
-            <a>{{user}}</a>
-          </li>
-        </ng-template>
+        <li >
+          <a class="nav-link nav-name" >{{user}}</a>
+        </li>
       </ul>
     </div>
 </nav>

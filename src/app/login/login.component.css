@@ -7,3 +7,6 @@
 .card-body {
     max-width: 40rem;
 }
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
