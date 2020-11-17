@@ -6,10 +6,8 @@
       <input formControlName="username" type="user" class="form-control" id="exampleInputPassword">
     </div>
     <span *ngIf="signIn.get('username').invalid && signIn.get('username').touched" class="help-block">
-      <span *ngIf="signIn.get('username').hasError('pattern')">نام کاربری فاقد عدد می باشد</span>
-      <hr>
+      <span *ngIf="signIn.get('username').hasError('pattern')">نام کاربری فاقد عدد می باشد</span>      <hr>
       <span *ngIf="signIn.get('username').hasError('minlength')">اسم کمتر از 5 حرف</span>
-      <span *ngIf="signIn.get('username').errors['nameIsForbidden']">نام معتبر نمی باشد</span>
       <span *ngIf="signIn.get('username').errors['required']">نام اجباری می باشد</span>
     </span>
     <div class="form-group card-title">
@@ -17,11 +15,8 @@
       <input formControlName="password" type="password" class="form-control card-title" id="exampleInputPassword1">
     </div>
     <span *ngIf="!signIn.get('password').valid && signIn.get('password').touched" class="help-block">
-      <span *ngIf="signIn.get('password').hasError('pattern')">رمز عبور فاقد عدد است<hr></span>
-      
+      <span *ngIf="signIn.get('password').hasError('pattern')">رمز عبور فاقد عدد است<hr></span>      
       <span *ngIf="signIn.get('password').hasError('minlength')">اسم کمتر از 5 حرف است</span>
-
-      <span *ngIf="signIn.get('password').errors['nameIsForbidden']">رمز عبور معتبر نمی باشد</span>
       <span *ngIf="signIn.get('password').errors['required']">رمز عبور اجباری می باشد</span>
       <hr>
     </span>

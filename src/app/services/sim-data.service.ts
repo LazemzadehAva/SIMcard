@@ -1,6 +1,5 @@
 import { ItemModel } from './../item.model';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { EventEmitter } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { FilterModel } from '../shared/filter/filter.component';

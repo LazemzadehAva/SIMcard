@@ -54,7 +54,7 @@ export class ShoppingListComponent implements OnInit {
 
   addNewSim() {
     this.dialogService.open(AddNewSimComponent, {
-      data:{
+      data: {
         edit: false
       },
       header: 'سیم کارت',

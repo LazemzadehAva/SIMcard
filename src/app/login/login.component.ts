@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private router: Router) {
     this.signIn = new FormGroup({
       // tslint:disable-next-line: max-line-length
-      username: new FormControl(null, [Validators.required, this.forbiddenNames.bind(this), Validators.minLength(5), Validators.pattern('[a-zA-Z ]*')]),
+      username: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z ]*')]),
       // tslint:disable-next-line: max-line-length
       password: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z ]*')]),
     });
@@ -37,14 +37,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['']);
       }
     }
-  }
-
-  forbiddenNames(control: FormControl): { [s: string]: boolean } {
-    if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
-      // tslint:disable-next-line: object-literal-key-quotes
-      return { 'nameIsForbidden': true };
-    }
-    return null;
   }
 }
 

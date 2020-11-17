@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('header init');
     this.user = localStorage.getItem('name');
   }
 
