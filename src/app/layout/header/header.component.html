@@ -27,20 +27,19 @@
       <li class="nav-item" *ngIf="!isAdmin">
         <a class="nav-link" routerLink="cart"><i class="fa fa-shopping-cart"></i></a>
       </li>
+      <ng-template #login>
       <li class="nav-item">
-        <ng-template #login>
-          <a class="nav-link" routerLink="/login"><i class="fas fa-key"></i></a>
-        </ng-template>
+        <a class="nav-link" routerLink="/login"><i class="fas fa-key"></i></a>
       </li>
-      <li class="nav-item dropdown" *ngIf="user else login">
+    </ng-template>
+      <li *ngIf="user else login">
         <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
           {{user}}
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item" (click)="logout()">Logout</a>
-        </div>
-
+        </div> 
       </li>
     </ul>
   </div>

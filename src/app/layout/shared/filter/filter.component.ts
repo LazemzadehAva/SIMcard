@@ -36,6 +36,7 @@ export class FilterComponent implements OnInit {
     } else {
       this.removeFilter(newFilter);
     }
+    console.log(newFilter);
     this.dataService.filterResults();
   }
 

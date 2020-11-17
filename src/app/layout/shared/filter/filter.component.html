@@ -8,12 +8,12 @@
     <h6 class="font-weight-bold mb-3">نوع سیم کارت</h6>
     <div class="form-check pl-0 mb-3">
       <!-- ng-change="onfilter(type)" ng-model="type" -->
-      <input (click)="onTypeClick($event)" data-name="type" data-filter="0" type="checkbox"
+      <input (click)="onTypeClick($event)" data-name="type" value="0" data-filter="0" type="checkbox"
         class="form-check-input filled-in" id="et">
       <label class="form-check-label small text-uppercase card-link-secondary" for="new">اعتباری</label>
     </div>
     <div class="form-check pl-0 mb-3">
-      <input (click)="onTypeClick($event)" data-name="type" data-filter="1" type="checkbox"
+      <input (click)="onTypeClick($event)" data-name="type" value="1" data-filter="1" type="checkbox"
         class="form-check-input filled-in" id="da">
       <label class="form-check-label small text-uppercase card-link-secondary" for="used">دائمی</label>
     </div>

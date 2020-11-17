@@ -19,7 +19,6 @@ import { LayoutRoutingModule } from './layout-routing.module';
     LayoutComponent,
     Error403Component,
     Error404Component,
-
   ],
   imports: [
     CommonModule,
