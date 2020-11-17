@@ -28,5 +28,10 @@ export class ShoppingCardComponent implements OnInit {
 
   delete(id: number) {
     this.cartItems = this.cartItems.filter(x => x.id !== id);
+    this.dataService.setUserCart(this.cartItems);
+    // const index = this.storageService.data.indexOf(
+    //   this.cartItems.find(x => x.id === id));
+    // this.cartItems.splice(index, 1);
+    // console.log(index);
   }
 }

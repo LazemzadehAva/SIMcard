@@ -56,8 +56,16 @@ export class SimDataService {
     return this.cart;
   }
 
+  setUserCart(cart) {
+    this.cart = cart;
+  }
+
   addItemToCart(newItem): void {
-    this.cart.push(newItem);
+    if(this.cart.indexOf(newItem) === -1) {
+      this.cart.push(newItem);
+      console.log(newItem);
+    }
+   
   }
   onOperatorFilter(): string[] {
      const operatorMap = [...new Set (this.mock.map(x => x.operator ))];
