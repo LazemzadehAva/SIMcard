@@ -5,8 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const routes: Routes = [
-  { path: '', component: ShoppingListComponent },
-  { path: 'admin', component: ShoppingListComponent, data: { mode: 'admin' }, canActivate: [AdminGaurd] },
+  { path: '', component: ShoppingListComponent, },
+  { path: 'admin', component: ShoppingListComponent, data: { mode: 'admin' }, canActivate: [AuthGaurd, AdminGaurd] },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 // configures NgModule imports and exports
