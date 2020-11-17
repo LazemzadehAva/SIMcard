@@ -1,7 +1,7 @@
-import { FilterModel } from '../shared/filter/filter.component';
 import { Component, OnInit } from '@angular/core';
 import { SimDataService } from 'src/app/services/sim-data.service';
 import { ItemModel } from 'src/app/item.model';
+import { FilterModel } from '../shared/filter/filter.component';
 
 @Component({
   selector: 'app-search-box',

@@ -1,41 +1,24 @@
-import { SharedModule } from './shared/shared.module';
-
-import { SearchBoxComponent } from './search-box/search-box.component';
+import { LayoutModule } from './layout/layout.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LocalStorageService } from './services/local-storage.service';
 import { AppRoutingModule } from './app-routing.module';
-import { PublicModule } from './public/public.module';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { Error403Component } from './errors/error403/error403.component';
-import { Error404Component } from './errors/error404/error404.component';
-import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    SearchBoxComponent,
-    Error403Component,
-    Error404Component,
     LoginComponent,
   ],
   imports: [
-    FormsModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
-    PublicModule,
-    CommonModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    LayoutModule,
   ],
   providers: [LocalStorageService],
   bootstrap: [AppComponent]
