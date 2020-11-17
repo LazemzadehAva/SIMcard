@@ -20,7 +20,6 @@ import {SplitButtonModule} from 'primeng/splitbutton';
     LayoutComponent,
     Error403Component,
     Error404Component,
-
   ],
   imports: [
     CommonModule,
