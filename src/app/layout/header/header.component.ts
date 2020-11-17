@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Validators } from '@angular/forms';
 
 import { Component, OnInit } from '@angular/core';
@@ -13,10 +14,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent implements OnInit {
    user = '';
   isAdmin = false ;
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     this.isAdmin = authService.isAdmin();
-    console.log(this.isAdmin);
-
   }
 
   ngOnInit() {
@@ -24,4 +23,8 @@ export class HeaderComponent implements OnInit {
     this.user = localStorage.getItem('name');
   }
 
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
 }
