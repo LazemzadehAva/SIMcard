@@ -23,7 +23,7 @@ import { AddNewSimComponent } from './add-new-sim/add-new-sim.component';
     RadioButtonModule,
     ButtonModule,
     ReactiveFormsModule,
-    InputMaskModule
+    InputMaskModule,
   ],
   entryComponents: [
     AddNewSimComponent
