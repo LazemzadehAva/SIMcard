@@ -1,16 +1,11 @@
-
 import { LocalStorageService } from 'src/app/services/local-storage.service';
-
-
 import { Component, OnInit } from '@angular/core';
-
 import { ItemModel } from 'src/app/item.model';
 import { SimDataService } from 'src/app/services/sim-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { AddNewSimComponent } from 'src/app/admin/add-new-sim/add-new-sim.component';
-
 import { DialogService } from 'primeng-lts/dynamicdialog';
 import { MessageService } from 'primeng-lts/api';
+import { AddNewSimComponent } from '../admin/add-new-sim/add-new-sim.component';
 
 
 
@@ -54,7 +49,7 @@ export class ShoppingListComponent implements OnInit {
 
   addNewSim() {
     this.dialogService.open(AddNewSimComponent, {
-      data:{
+      data: {
         edit: false
       },
       header: 'سیم کارت',
@@ -65,7 +60,7 @@ export class ShoppingListComponent implements OnInit {
 
 
   update(id: number) {
-   this.dialogService.open(AddNewSimComponent, {
+    this.dialogService.open(AddNewSimComponent, {
       data: {
         id,
         edit: true,
@@ -85,7 +80,7 @@ export class ShoppingListComponent implements OnInit {
 
   delete(id: number) {
     const index = this.localStorageService.data.indexOf(
-    this.localStorageService.data.find(x => x.id === id));
+      this.localStorageService.data.find(x => x.id === id));
     this.localStorageService.data.splice(index, 1);
     console.log(index);
   }

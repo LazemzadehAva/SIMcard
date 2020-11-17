@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       //  this.router.navigate(['']);
 
       if (this.authServive.isAdmin()) {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/pages/panel/admin']);
       } else {
         this.router.navigate(['']);
       }

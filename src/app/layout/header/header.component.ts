@@ -1,9 +1,7 @@
-import { LocalStorageService } from './../services/local-storage.service';
 import { Validators } from '@angular/forms';
 
-import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -15,8 +13,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
    user = '';
   isAdmin = false ;
-  constructor(private authService: AuthService,
-              private router: Router) {
+  constructor(private authService: AuthService) {
     this.isAdmin = authService.isAdmin();
     console.log(this.isAdmin);
 
