@@ -1,3 +1,4 @@
+import { AuthGaurd } from './../services/guards/auth-guard.service';
 import { Error404Component } from './errors/error404/error404.component';
 import { LayoutComponent } from './layout.component';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,7 @@ import { ShoppingCardComponent } from './public/shopping-card/shopping-card.comp
 
 const routes: Routes = [
   {
-    path: '', component: LayoutComponent, children: [
+    path: '', component: LayoutComponent, canActivateChild: [AuthGaurd], children: [
       { path: '404', component: Error404Component },
       { path: '403', component: Error403Component },
       { path: 'cart', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
