@@ -54,7 +54,7 @@ export class ShoppingListComponent implements OnInit {
       },
       header: 'سیم کارت',
       width: '50%',
-      style: { 'max-height': '500px', overflow: 'auto', 'background-color': 'lightgray' }
+      style: { 'max-height': '500px', overflow: 'auto', 'background-color': 'black' }
     });
   }
 
