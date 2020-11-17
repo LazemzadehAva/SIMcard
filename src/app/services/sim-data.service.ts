@@ -12,8 +12,8 @@ export class SimDataService {
 
   constructor(
     private storageService: LocalStorageService) {
-      this.filteredItems = this.mock = storageService.getFromLocal('mockData');
-    }
+    this.filteredItems = this.mock = storageService.getFromLocal('mockData');
+  }
 
 
   // operator: Mock[] = [];
@@ -56,29 +56,42 @@ export class SimDataService {
     return this.cart;
   }
 
-  addItemToCart(newItem): void {
-    this.cart.push(newItem);
+  addItemToCart(newItem: ItemModel): void {
+    // let index = +this.storageService.data.indexOf(
+    //   this.storageService.data.find(x => x.id === id));
+    // console.log(index);
+    // console.log(id);
+    // if (++index  !== id) {
+    //  ;
+    // }
+    // this.cart.add(newItem)
+    // console.log(newItem.id);
+    // const set = new Set();
+   this.cart.push(newItem);
+    console.log(newItem);
+    // console.log(set);
+
   }
   onOperatorFilter(): string[] {
-     const operatorMap = [...new Set (this.mock.map(x => x.operator ))];
-     return operatorMap;
+    const operatorMap = [...new Set(this.mock.map(x => x.operator))];
+    return operatorMap;
   }
 
- onTypeFilter(): any[] {
-  const typeMap = [...new Set (this.mock.map(x => x.type ))];
-  return typeMap;
- }
- getId(): number[] {
- const allIds = [...new Set (this.mock.map(x => x.id))];
- return allIds;
- }
+  onTypeFilter(): any[] {
+    const typeMap = [...new Set(this.mock.map(x => x.type))];
+    return typeMap;
+  }
+  getId(): number[] {
+    const allIds = [...new Set(this.mock.map(x => x.id))];
+    return allIds;
+  }
 
 
-//  search(num: string): ItemModel[] {
-//   const searchResult: FilterModel = this.mock.filter( x => x.phoneNumber.includes(num)) ;
-//   this.filters = this.filters.filter(item => !(item.fieldName === 'name' && (item.type === 'min' || item.type === 'max')));
-//   this.addFilter(searchResult);
-//  }
+  //  search(num: string): ItemModel[] {
+  //   const searchResult: FilterModel = this.mock.filter( x => x.phoneNumber.includes(num)) ;
+  //   this.filters = this.filters.filter(item => !(item.fieldName === 'name' && (item.type === 'min' || item.type === 'max')));
+  //   this.addFilter(searchResult);
+  //  }
 
 
   filterResults() {
@@ -87,7 +100,7 @@ export class SimDataService {
     const costFilters = this.filters.filter(f => f.fieldName === 'cost');
     const phoneNumberFilters = this.filters.filter(f => f.fieldName === 'phoneNumber');
     this.filteredItems = this.mock
-    // this.operatorMap = this.mock
+      // this.operatorMap = this.mock
       // tslint:disable-next-line: triple-equals
       .filter(item => typeFilters.length === 0 || typeFilters.some(x => item.type == x.value))
       // tslint:disable-next-line: triple-equals
@@ -95,8 +108,8 @@ export class SimDataService {
       .filter(item => costFilters.length === 0 ||
         (!costFilters.some(x => x.type === 'max') || costFilters.some(x => x.type === 'max' && item.cost <= +(x.value)))
         && (!costFilters.some(x => x.type === 'min') || costFilters.some(x => x.type === 'min' && item.cost >= +(x.value))))
-        // tslint:disable-next-line: max-line-length
-        .filter(item => phoneNumberFilters.length === 0 || phoneNumberFilters.some(x => item.phoneNumber.split('-').join('').includes(x.value as string)));
+      // tslint:disable-next-line: max-line-length
+      .filter(item => phoneNumberFilters.length === 0 || phoneNumberFilters.some(x => item.phoneNumber.split('-').join('').includes(x.value as string)));
     this.listUpdated.emit(this.filteredItems);
     console.log(this.filteredItems);
   }

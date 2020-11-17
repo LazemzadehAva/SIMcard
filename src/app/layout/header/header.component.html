@@ -14,7 +14,7 @@
     </div>
 </nav> -->
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="col-12 navbar navbar-expand-md navbar-dark bg-dark">
   <div class="collapse navbar-collapse container">
     <app-search-box></app-search-box>
   </div>
@@ -32,16 +32,15 @@
           <a class="nav-link" routerLink="/login"><i class="fas fa-key"></i></a>
         </ng-template>
       </li>
-      <li class="nav-item dropdown" *ngIf="user else login">
-        <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          {{user}}
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" (click)="logout()">Logout</a>
-        </div>
+      <li>
 
+      </li>
+      <li class="nav-item" *ngIf="user else login">
+        <p-splitButton label="{{user}}" icon="pi pi-file" [model]="items"></p-splitButton>
       </li>
     </ul>
   </div>
 </nav>
+<!-- <div class="col-4">
+
+</div> -->

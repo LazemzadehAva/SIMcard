@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { Validators } from '@angular/forms';
 
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { MenuItem } from 'primeng-lts/api';
 
 
 
@@ -14,9 +14,16 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent implements OnInit {
   user = '';
   isAdmin = false;
+  items: MenuItem[];
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(authService: AuthService, private router: Router) {
     this.isAdmin = authService.isAdmin();
+    this.items = [
+      {
+        label: 'Logout', icon: 'pi pi-refresh', command: () => {
+          this.logout();
+        }
+      }];
   }
 
   ngOnInit() {

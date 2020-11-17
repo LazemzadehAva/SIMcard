@@ -31,10 +31,9 @@
               <div class="card-body col-8 pl-0">
                 <h5 class="card-title">{{item.phoneNumber}}</h5>
                 <p class="card-text">{{item.cost}} تومان</p>
-                <button class="btn btn-dark px-5" (click)="addToCart(item)" *ngIf="!isAdmin">+</button>
+                <button class="btn btn-dark px-5" (click)="addToCart(item,item.id)" *ngIf="!isAdmin">+</button>
                 <div *ngIf="isAdmin">
-                  <p-splitButton label="حذف" icon="pi pi-trash" (onClick)="delete(item.id)" styleClass="ui-button-secondary"></p-splitButton>
-                </div>
+                  <p-splitButton label="حذف" icon="pi pi-trash" (onClick)="delete(item.id)" [model]="getDropMenu(item)" styleClass="ui-button-secondary"></p-splitButton></div>
               </div>     
             </div>
           </div>

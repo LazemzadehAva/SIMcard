@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { LocalStorageService } from '../services/local-storage.service';
 import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
-
+import {DropdownModule} from 'primeng-lts/dropdown';
+import {SplitButtonModule} from 'primeng/splitbutton';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -26,6 +27,8 @@ import { LayoutRoutingModule } from './layout-routing.module';
     LayoutRoutingModule,
     FormsModule,
     SharedModule,
+    DropdownModule,
+    SplitButtonModule
   ],
   providers: [LocalStorageService],
   bootstrap: []

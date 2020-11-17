@@ -42,7 +42,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
   addToCart(item: ItemModel) {
-    this.simDataService.addItemToCart(item);
+     this.simDataService.addItemToCart(item);
     // this.simDataService.itemAdded.emit(item);
   }
 
@@ -58,6 +58,15 @@ export class ShoppingListComponent implements OnInit {
     });
   }
 
+  getDropMenu(context: ItemModel) {
+    return [
+      {
+        label: 'ویرایش', icon: 'pi pi-refresh', command: () => {
+          this.update(context.id);
+        }
+      },
+    ];
+  }
 
   update(id: number) {
     this.dialogService.open(AddNewSimComponent, {
