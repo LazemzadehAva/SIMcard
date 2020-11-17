@@ -9,10 +9,9 @@ import { ButtonModule } from 'primeng-lts/button';
 import { InputMaskModule } from 'primeng-lts/inputmask';
 import { AddNewSimComponent } from './add-new-sim/add-new-sim.component';
 
-
 @NgModule({
   declarations: [
-    AddNewSimComponent,
+    AddNewSimComponent
   ],
   imports: [
     CommonModule,
