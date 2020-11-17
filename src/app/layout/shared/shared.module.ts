@@ -15,8 +15,7 @@ import { AddNewSimComponent } from './admin/add-new-sim/add-new-sim.component';
   declarations: [
     ShoppingListComponent,
     FilterComponent,
-    SharedComponent,
-    AddNewSimComponent
+    SharedComponent
   ],
   imports: [
     CommonModule,

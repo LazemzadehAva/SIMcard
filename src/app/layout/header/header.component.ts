@@ -12,8 +12,9 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-   user = '';
-  isAdmin = false ;
+  user = '';
+  isAdmin = false;
+
   constructor(private authService: AuthService, private router: Router) {
     this.isAdmin = authService.isAdmin();
   }
