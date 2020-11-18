@@ -20,14 +20,13 @@ export class HeaderComponent implements OnInit {
     this.isAdmin = authService.isAdmin();
     this.items = [
       {
-        label: 'Logout', icon: 'pi pi-refresh', command: () => {
+        label: 'خروج', icon: 'pi pi-refresh', command: () => {
           this.logout();
         }
       }];
   }
 
   ngOnInit() {
-    console.log('header init');
     this.user = localStorage.getItem('name');
   }
 

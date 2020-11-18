@@ -25,12 +25,12 @@ export class AuthService {
         if (model.username === 'admin' && model.password === 'admin') {
             localStorage.setItem('token', 'xxx');
             localStorage.setItem('roles', 'admin');
-            localStorage.setItem('name', 'Admin User');
+            localStorage.setItem('name', 'ادمین');
             return true;
         } else if (model.username === 'guest' && model.password === 'guest') {
             localStorage.setItem('token', 'xxx');
             localStorage.setItem('roles', 'public');
-            localStorage.setItem('name', 'public guest');
+            localStorage.setItem('name', 'کاربر');
             return true;
         }
         return false;

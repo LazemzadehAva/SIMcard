@@ -57,28 +57,14 @@ export class SimDataService {
   }
 
 
-  addItemToCart(newItem: ItemModel): void {
-    // let index = +this.storageService.data.indexOf(
-    //   this.storageService.data.find(x => x.id === id));
-    // console.log(index);
-    // console.log(id);
-    // if (++index  !== id) {
-    //  ;
-    // }
-    // this.cart.add(newItem)
-    // console.log(newItem.id);
-    // const set = new Set();
-    this.cart.push(newItem);
-    console.log(newItem);
-    // console.log(set);
 
 
-    setUserCart(cart) {
-      this.cart = cart;
-    }
+  setUserCart(cart) {
+    this.cart = cart;
+  }
 
-    addItemToCart(newItem): void {
-      if(this.cart.indexOf(newItem) === -1) {
+  addItemToCart(newItem): void {
+    if (this.cart.indexOf(newItem) === -1) {
       this.cart.push(newItem);
       console.log(newItem);
     }
