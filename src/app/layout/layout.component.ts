@@ -4,9 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-layout',
   template: `
   <app-header></app-header>
-  <div style="margin-top: 5rem">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
   <app-footer></app-footer>
   `
 })

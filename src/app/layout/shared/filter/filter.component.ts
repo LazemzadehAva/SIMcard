@@ -5,7 +5,7 @@ import { SimDataService } from 'src/app/services/sim-data.service';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css']
+  styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
   [x: string]: any;

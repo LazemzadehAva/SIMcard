@@ -1,0 +1,19 @@
+$light-pink :#edc7b7;
+$dark-pink :#ac3b61;
+$blue :#123c69;
+$gray :#bab2b5;
+$dark-gray:#1E2B32 ;
+$med-gray:#2A3942;
+
+
+nav{
+    background-image: linear-gradient(to right bottom, $dark-gray, $med-gray);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+i{
+   color:white;
+}

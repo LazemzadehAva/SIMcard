@@ -1,41 +1,40 @@
-<section class="pt-3 text-right pr-5">
-
-  <h5>دسته بندی ها</h5>
-  <hr>
-
-  <section class="mb-4">
-
-    <h6 class="font-weight-bold mb-3">نوع سیم کارت</h6>
-    <div class="form-check pl-0 mb-3">
-      <!-- ng-change="onfilter(type)" ng-model="type" -->
-      <input (click)="onTypeClick($event)" data-name="type" value="0" data-filter="0" type="checkbox"
-        class="form-check-input filled-in" id="et">
-      <label class="form-check-label small text-uppercase card-link-secondary" for="new">اعتباری</label>
-    </div>
-    <div class="form-check pl-0 mb-3">
-      <input (click)="onTypeClick($event)" data-name="type" value="1" data-filter="1" type="checkbox"
-        class="form-check-input filled-in" id="da">
-      <label class="form-check-label small text-uppercase card-link-secondary" for="used">دائمی</label>
+<div class=" text-right m-3">
+  <div class="card">
+    <div class="header">
+      <h5>دسته بندی ها</h5>
     </div>
 
-  </section>
+    <section>
+      <h6 class="font-weight-bold mb-3">نوع سیم کارت</h6>
+      <div class="form-check pl-0 mb-3">
+        <!-- ng-change="onfilter(type)" ng-model="type" -->
+        <input (click)="onTypeClick($event)" data-name="type" value="0" data-filter="0" type="checkbox"
+          class="form-check-input filled-in" id="et">
+        <label class="form-check-label small text-uppercase card-link-secondary" for="new">اعتباری</label>
+      </div>
+      <div class="form-check pl-0 mb-3">
+        <input (click)="onTypeClick($event)" data-name="type" value="1" data-filter="1" type="checkbox"
+          class="form-check-input filled-in" id="da">
+        <label class="form-check-label small text-uppercase card-link-secondary" for="used">دائمی</label>
+      </div>
 
-  <hr>
-  <section class="mb-4">
+    </section>
 
-    <h6 class="font-weight-bold mb-3"> اپراتور </h6>
-    <div class="form-check pl-0 mb-3" *ngFor="let operator of listOfOPerator; let i=index">
-      <input id="operator-{{i}}" (click)="onTypeClick($event)" data-name="operator" value="{{operator}}" type="checkbox"
-        class="form-check-input filled-in">
-      <label class="form-check-label small text-uppercase card-link-secondary"
-        for="operator-{{i}}">{{ operator }}</label>
-    </div>
+    <hr>
+    <section>
 
-  </section>
-  <hr>
+      <h6 class="font-weight-bold mb-3"> اپراتور </h6>
+      <div class="form-check pl-0 mb-3" *ngFor="let operator of listOfOPerator; let i=index">
+        <input id="operator-{{i}}" (click)="onTypeClick($event)" data-name="operator" value="{{operator}}"
+          type="checkbox" class="form-check-input filled-in">
+        <label class="form-check-label small text-uppercase card-link-secondary"
+          for="operator-{{i}}">{{ operator }}</label>
+      </div>
 
+    </section>
+    <hr>
 
-  <!-- <section class="mb-4">
+    <!-- <section class="mb-4">
 
     <h6 class="font-weight-bold mb-3">قیمت</h6>
 
@@ -61,9 +60,8 @@
     </div>
 
   </section> -->
-
-  <!-- Section: Price version 2 -->
-  <!-- <section class="mb-4">
+    <!-- Section: Price version 2 -->
+    <!-- <section class="mb-4">
   
       <h6 class="font-weight-bold mb-3">Price</h6> 
   
@@ -76,11 +74,13 @@
         </div> 
   
       </section>  -->
-  <!-- Section: Price version 2 -->
+    <!-- Section: Price version 2 -->
 
-  <section>
-    <h5>قیمت: {{rangeValues[1] + ' تا ' + rangeValues[0]}}</h5>
-    <p-slider [(ngModel)]="rangeValues" [min]="50000" [max]="10000000" [range]="true" [step]="1000" (onChange)="onRangeClick($event)">
-    </p-slider>
-  </section>
-</section>
+    <section>
+      <h5>قیمت: {{rangeValues[1] + ' تا ' + rangeValues[0]}}</h5>
+      <p-slider [(ngModel)]="rangeValues" [min]="50000" [max]="10000000" [range]="true" [step]="1000"
+        (onChange)="onRangeClick($event)">
+      </p-slider>
+    </section>
+  </div>
+</div>

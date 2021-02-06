@@ -2,11 +2,13 @@ import { AuthService } from './../services/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {InputTextModule} from 'primeng-lts/inputtext';
+import {CardModule} from 'primeng-lts/card';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   signIn: FormGroup;

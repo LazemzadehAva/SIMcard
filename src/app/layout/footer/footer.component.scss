@@ -1,0 +1,20 @@
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+ 
+  .sticky + .content {
+    padding-top: 60px;
+  } */
+  $light-pink :#edc7b7;
+$dark-pink :#ac3b61;
+$dark-gray:#1E2B32 ;
+$med-gray:#2A3942;
+  #footer{
+    background-image: linear-gradient(to right bottom, $dark-gray, $med-gray);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }

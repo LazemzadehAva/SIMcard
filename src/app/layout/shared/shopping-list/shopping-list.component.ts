@@ -13,7 +13,7 @@ import { AddNewSimComponent } from '../admin/add-new-sim/add-new-sim.component';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css'],
+  styleUrls: ['./shopping-list.component.scss'],
   providers: [DialogService, MessageService]
 })
 export class ShoppingListComponent implements OnInit {
@@ -26,7 +26,6 @@ export class ShoppingListComponent implements OnInit {
     activatedroute: ActivatedRoute,
     private localStorageService: LocalStorageService,
     private messageService: MessageService,
-
     public dialogService: DialogService
 
   ) {
@@ -89,7 +88,7 @@ export class ShoppingListComponent implements OnInit {
 
   delete(id: number) {
     const index = this.localStorageService.data.indexOf(
-      this.localStorageService.data.find(x => x.id === id));
+    this.localStorageService.data.find(x => x.id === id));
     this.localStorageService.data.splice(index, 1);
     console.log(index);
   }

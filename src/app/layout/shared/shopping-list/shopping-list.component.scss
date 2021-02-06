@@ -1,0 +1,84 @@
+$light-pink :#edc7b7;
+$dark-pink :#ac3b61;
+$blue :#123c69;
+$gray :#bab2b5;
+$dark-gray:#1E2B32 ;
+$med-gray:#2A3942;
+
+
+.card {
+  perspective: 1500rem;
+  -moz-perspective: 1500rem;
+  position: relative;
+  height: 20rem;
+background-color: $med-gray;
+
+
+  &__side {
+color: white;
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20rem;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(#000000, .30);
+    overflow: hidden;
+  
+
+    &--back {
+      background-image: linear-gradient(to right bottom, #8ca3a3, white);
+      transform: rotateY(-180deg);
+
+    }
+  }
+
+
+
+  .btn {
+    background-color: $dark-pink;
+    color: white;
+    transition: all .2s;
+    width: 20%;
+
+    &:hover,
+    &:focus {
+      transform: translatey(-3px);
+      box-shadow: 0 1rem 2rem rgba(#000000, .2);
+    }
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+
+    &:active {
+      transform: translatey(-1px);
+      box-shadow: 0 1rem 2rem rgba(#000000, .2);
+    }
+  }
+
+
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+  &__body--back{
+    color: $dark-gray;
+  }
+  &__picture {
+    background-image: linear-gradient(to right bottom, #8ca3a3,white ), url(../../../img/bg-19.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 15rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+}

@@ -1,0 +1,89 @@
+$light-pink :#edc7b7;
+$dark-pink :#ac3b61;
+$blue :#123c69;
+$gray :#bab2b5;
+
+.row {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-book {
+ background-image: linear-gradient(to right bottom, $gray, white);
+  padding: 15rem 0;
+}
+
+.book {
+  background-image: linear-gradient(105deg, rgba($dark-pink, .7) 0%,
+      rgba($light-pink, .7) 50%,
+      (transparent) 50%),
+    url(../img/sim3.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(black, .15);
+  width: 60rem;
+
+  &-form {
+    width: 50%;
+    padding: 6rem;
+  }
+}
+
+
+.form {
+  &-control {
+    border-bottom: 5px solid transparent;
+    transition: all .3s;
+  }
+
+  &-control:focus {
+    outline: NONE;
+    box-shadow: 0 1rem 2rem rgba(#000000, .1);
+    border-bottom: 5px solid $dark-pink;
+  }
+
+  &-control:hover {
+    transform: translatey(-3px);
+    box-shadow: 0 1rem 2rem rgba(#000000, .2);
+  }
+
+}
+
+form {
+  label {
+    margin-top: 2rem;
+    color:$blue;
+  }
+
+  input.ng-invalid.ng-touched {
+    border: 3px solid red;
+  }
+
+
+  .btn {
+    background-color: $dark-pink;
+    color: white;
+    padding: .5rem 2rem;
+    transition: all .2s;
+    margin-top: 2rem;
+
+    &:hover,
+    &:focus {
+      transform: translatey(-3px);
+      box-shadow: 0 1rem 2rem rgba(#000000, .2);
+    }
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+
+    &:active {
+      transform: translatey(-1px);
+      box-shadow: 0 1rem 2rem rgba(#000000, .2);
+    }
+  }
+}

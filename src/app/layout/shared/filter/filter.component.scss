@@ -1,0 +1,45 @@
+$light-pink :#edc7b7;
+$dark-pink :#ac3b61;
+$blue :#123c69;
+$gray :#bab2b5;
+$dark-gray:#1E2B32 ;
+$med-gray:#2A3942;
+
+
+.card{
+  background-color:$dark-gray ;
+  border-radius: 10px 10px;
+}
+
+.header{
+  border-radius: 10px 10px 0px 0px;
+  padding: 5px;
+  background-color:$med-gray;
+}
+
+h5{
+  color: #FFFFFF;
+}
+
+
+
+ section{
+  font-size: 18px;
+  color: #fff;
+  list-style: none;
+
+  padding: 30px;
+}
+
+div .form-check:hover{
+  transition: 0.3s all;
+  color: $dark-pink;
+  background-color: rgba(42, 56, 65, 0.82);
+  border-radius: 10px;
+  cursor: pointer;
+padding-right: 5px;
+}
+
+
+
+

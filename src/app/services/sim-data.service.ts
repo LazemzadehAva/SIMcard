@@ -16,34 +16,13 @@ export class SimDataService {
   }
 
 
-  // operator: Mock[] = [];
-  // type: Mock[] = [];
   filters: FilterModel[] = [];
-
-
 
   cart: ItemModel[] = [];
 
   mock: ItemModel[];
 
   filteredItems: ItemModel[];
-
-  // onCheckType(typeEl: any[]) {
-  //   console.log(typeEl[0].id);
-  //   console.log(typeEl[0].checked);
-  //   if (typeEl[0].id === 'et' || typeEl[0].checked === true) {
-  //     this.filteredItems = this.mock.filter(x => x.type === true);
-  //     console.log(this.filteredItems);
-  //   } else if (typeEl[0].id === 'da' || typeEl[0].checked) {
-  //     this.filteredItems = this.mock.filter(x => x.type === false);
-  //     console.log(this.filteredItems);
-  //     console.log(this.mock);
-  //   } else {
-  //     this.filteredItems = this.mock;
-  //   }
-  //   // this.filteredItems = this.filteredItems.filter(el => el.type === typeEl);
-  //   return this.filteredItems;
-  // }
 
   listUpdated = new EventEmitter();
 
@@ -85,12 +64,6 @@ export class SimDataService {
     return allIds;
   }
 
-
-  //  search(num: string): ItemModel[] {
-  //   const searchResult: FilterModel = this.mock.filter( x => x.phoneNumber.includes(num)) ;
-  //   this.filters = this.filters.filter(item => !(item.fieldName === 'name' && (item.type === 'min' || item.type === 'max')));
-  //   this.addFilter(searchResult);
-  //  }
 
 
   filterResults() {

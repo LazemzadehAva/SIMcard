@@ -1,26 +1,39 @@
-<form class="card text-center " [formGroup]="signIn" (ngSubmit)="submit()">
+<section class="section-book">
+  <div class="row">
+    <div class="book">
+      <div class="book-form">
+        <form class="text-center" [formGroup]="signIn" (ngSubmit)="submit()">
 
-  <div class="card-body">
-    <div class="form-group card-title">
-      <label for="exampleInputPassword">نام کاربری</label>
-      <input formControlName="username" type="user" class="form-control" id="exampleInputPassword">
+          <div class="form-group">
+            <label for="exampleInputPassword">نام کاربری</label>
+            <input formControlName="username" type="user" class="form-control">
+          </div>
+
+          <span *ngIf="signIn.get('username').invalid && signIn.get('username').touched" class="help-block">
+            <span *ngIf="signIn.get('username').hasError('pattern')">نام کاربری فاقد عدد می باشد</span>
+            <hr>
+            <span *ngIf="signIn.get('username').hasError('minlength')">اسم کمتر از 5 حرف</span>
+            <span *ngIf="signIn.get('username').errors['required']">نام کاربری اجباری می باشد</span>
+          </span>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">رمز عبور</label>
+            <input formControlName="password" type="password" class="form-control">
+          </div>
+
+          <span *ngIf="!signIn.get('password').valid && signIn.get('password').touched" class="help-block">
+            <span *ngIf="signIn.get('password').hasError('pattern')">رمز عبور فاقد عدد است</span>
+            <hr>
+            <span *ngIf="signIn.get('password').hasError('minlength')">اسم کمتر از 5 حرف است</span>
+            <span *ngIf="signIn.get('password').errors['required']">رمز عبور اجباری می باشد</span>
+          </span>
+          <div>
+            <button type="submit" class="btn">ورود</button>
+          </div>
+
+
+        </form>
+      </div>
     </div>
-    <span *ngIf="signIn.get('username').invalid && signIn.get('username').touched" class="help-block">
-      <span *ngIf="signIn.get('username').hasError('pattern')">نام کاربری فاقد عدد می باشد</span>      <hr>
-      <span *ngIf="signIn.get('username').hasError('minlength')">اسم کمتر از 5 حرف</span>
-      <span *ngIf="signIn.get('username').errors['required']">نام اجباری می باشد</span>
-    </span>
-    <div class="form-group card-title">
-      <label for="exampleInputPassword1">رمز عبور</label>
-      <input formControlName="password" type="password" class="form-control card-title" id="exampleInputPassword1">
-    </div>
-    <span *ngIf="!signIn.get('password').valid && signIn.get('password').touched" class="help-block">
-      <span *ngIf="signIn.get('password').hasError('pattern')">رمز عبور فاقد عدد است<hr></span>      
-      <span *ngIf="signIn.get('password').hasError('minlength')">اسم کمتر از 5 حرف است</span>
-      <span *ngIf="signIn.get('password').errors['required']">رمز عبور اجباری می باشد</span>
-      <hr>
-    </span>
-    <button type="submit" class="btn btn-primary card-title">ورود</button>
   </div>
-
-</form>
+</section>
